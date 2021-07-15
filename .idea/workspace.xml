@@ -11,13 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9634fc3f-2239-444f-a873-094217e759fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/assets/img/auth-img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/assets/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/assets/svg/close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/components/auth.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/hoc/MainHeader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/styles/home.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/styles/main.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/components/authTabs/RegistrationTab.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/.development.env" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/.eslintrc.js" afterDir="false" />
@@ -46,13 +40,10 @@
       <change afterPath="$PROJECT_DIR$/server/src/user/user.service.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/tsconfig.build.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/auth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/auth.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/styles/globals.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +74,7 @@
       <recent name="$PROJECT_DIR$/client" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev (1)">
+  <component name="RunManager" selected="npm.start:dev">
     <configuration name="dev (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
@@ -104,8 +95,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start:dev" />
         <item itemvalue="npm.dev (1)" />
         <item itemvalue="npm.dev" />
       </list>
@@ -123,7 +125,7 @@
       <updated>1626287475926</updated>
       <workItem from="1626287477148" duration="288000" />
       <workItem from="1626287793404" duration="14000" />
-      <workItem from="1626287808942" duration="8999000" />
+      <workItem from="1626287808942" duration="10677000" />
     </task>
     <servers />
   </component>
@@ -142,21 +144,21 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="305" key="GridCell.Tab.0.bottom" timestamp="1626330380421">
+    <state width="1899" height="305" key="GridCell.Tab.0.bottom" timestamp="1626343524063">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1899" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1626330380421" />
-    <state width="1899" height="305" key="GridCell.Tab.0.center" timestamp="1626330380420">
+    <state width="1899" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1626343524063" />
+    <state width="1899" height="305" key="GridCell.Tab.0.center" timestamp="1626343524062">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1899" height="305" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1626330380420" />
-    <state width="1899" height="305" key="GridCell.Tab.0.left" timestamp="1626330380420">
+    <state width="1899" height="305" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1626343524062" />
+    <state width="1899" height="305" key="GridCell.Tab.0.left" timestamp="1626343524061">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1899" height="305" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1626330380420" />
-    <state width="1899" height="305" key="GridCell.Tab.0.right" timestamp="1626330380421">
+    <state width="1899" height="305" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1626343524061" />
+    <state width="1899" height="305" key="GridCell.Tab.0.right" timestamp="1626343524063">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1899" height="305" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1626330380421" />
+    <state width="1899" height="305" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1626343524063" />
   </component>
 </project>
