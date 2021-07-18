@@ -1,8 +1,22 @@
+@import "./mixins/_mixins.sass"
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap')
+
+
+
 body
-  background-color: #E5E5E5
+  background-color: #FBFBFD
   position: relative
   min-height: 100vh
   line-height: 1.6em
+  font-size: 16px
+  font-family: 'Poppins', sans-serif
+
+.section
+  width: 100%
+
+ul, li
+  margin: 0
+  padding: 0
 
 *
   margin: 0
@@ -11,10 +25,22 @@ body
   outline: none
   text-decoration: none
   list-style: none
+  letter-spacing: 0.01em
+
+a
+  text-decoration: none
+  outline: none
+  color: inherit
+  &:hover
+    color: inherit
 
 button
   cursor: pointer
-  
+  border: none
+
+span
+  display: block
+
 .fadeIn-enter
   opacity: 0
   pointer-events: none
@@ -38,7 +64,7 @@ button
   top: calc(50% - 325px)
   left: calc(50% - 460px)
   background-color: #fff
-  position: absolute
+  position: fixed
   box-shadow: 0px 10px 40px 2px rgba(3, 41, 177, 0.08), 34.9453px 64.8984px 87.3633px rgba(7, 21, 72, 0.03), 0px 2.49609px 7.48828px rgba(31, 63, 174, 0.06), 0px 0px 1.24805px rgba(31, 63, 174, 0.06)
   border-radius: 20px
   padding: 18px 19px
@@ -80,12 +106,460 @@ button
 
 .header
   //display: flex
+  padding: 25px 0
   .container
     justify-content: space-between
     display: flex
     .header__header-links
       display: flex
+      width: 250px
+      justify-content: space-between
+      align-items: center
+      li
+        color: #BEC5DF
+        transition: color .3s ease
+        font-weight: bold
+        &:hover
+          color: #5779F0
+
     .header__buttons
       display: flex
+      align-items: center
       .header__log-in
+        color: #5779F0
+        font-weight: bold
+        background-color: transparent
         font-size: 16px
+        margin-right: 33px
+      .header__try
+        @include dashedButton(133px, 50px)
+
+
+.MainSection
+  margin-top: 150px
+  .container
+    display: flex
+    justify-content: space-between
+  .imgWrapper
+    img
+      max-width: 650px
+      margin-top: -100px
+      //margin-right: -150px
+      height: auto
+  .contentWrapper
+    width: 450px
+    span
+      @include blueLabel
+      margin-bottom: 26px
+    h1
+      font-size: 44px
+      font-weight: 600
+      line-height: 130%
+      color: #0D1D52
+    .buttonsWrapper
+      display: flex
+      align-items: center
+      .blueButton
+        @include blueBtn(146px, 53px)
+      .videoButtonWrapper
+        display: flex
+        align-items: center
+
+        button.videoButton
+          width: 53px
+          height: 53px
+          box-shadow: 0px 10px 20px rgba(31, 63, 174, 0.06), 0px 2px 6px rgba(31, 63, 174, 0.06), 0px 0px 1px rgba(31, 63, 174, 0.06)
+          border-radius: 100px
+          @include centerMix
+          margin-left: 20px
+          border: 1px dashed #5779F0
+          img
+            width: 14px
+            height: 16px
+            margin-right: -5px
+        span
+          @include blueLabel
+          font-size: 16px
+          margin-bottom: 0
+          margin-left: 16px
+
+.takeTest
+  margin-top: 150px
+  .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+  .imgWrapper
+    img
+      max-width: 730px
+      //margin-top: -100px
+      //margin-right: -150px
+      height: auto
+  .contentWrapper
+    width: 450px
+    span
+      @include blueLabel
+      margin-bottom: 26px
+    h2
+      @include SubMainHeader(28px)
+    p
+      margin-top: 0
+      margin-bottom: 0
+    .buttonsWrapper
+      display: flex
+      align-items: center
+      .blueButton
+        @include dashedButton(150px, 53px)
+        margin-top: 45px
+
+.howWork
+  margin-top: 300px
+  .row.bottom
+    margin-top: 120px
+  span
+    @include blueLabel
+    font-size: 14px
+    margin-bottom: 13px
+    text-align: center
+  h2
+    @include SubMainHeader(90px)
+    text-align: center
+  .step
+    .number
+      background: #FFFFFF
+      border: 1px dashed #BAC5EA
+      box-sizing: border-box
+      box-shadow: 0px 10px 20px rgba(31, 63, 174, 0.06), 0px 2px 6px rgba(31, 63, 174, 0.06), 0px 0px 1px rgba(31, 63, 174, 0.06)
+      border-radius: 100px
+      width: 70px
+      height: 70px
+      @include centerMix
+      font-size: 24px
+      font-weight: 600
+      line-height: 1.7%
+      color: #BAC5EA
+    h3
+      margin: 51px 0 26px 0
+      color: #5779F0
+      font-size: 24px
+      font-weight: bold
+    p
+      color: #6D7694
+      max-width: 280px
+
+.aboutSection
+  margin-top: 150px
+  .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+  .imgWrapper
+    img
+      max-width: 345px
+      //margin-top: -100px
+      //margin-right: -150px
+      height: auto
+  .contentWrapper
+    width: 450px
+    span
+      @include blueLabel
+      margin-bottom: 26px
+    h2
+      @include SubMainHeader(26px)
+    p
+      color: #6D7694
+      &:first-child
+        margin-bottom: 21px
+
+.subscription
+  span
+    @include blueLabel
+    font-size: 14px
+    margin-bottom: 13px
+    text-align: center
+  h2
+    @include SubMainHeader(78px)
+    text-align: center
+  .cards
+    display: flex
+    justify-content: space-around
+    .card
+      padding: 59px 104px 44px 104px
+      width: 550px
+      box-shadow: 28px 52px 70px rgba(7, 21, 72, 0.03), 0px 2px 6px rgba(31, 63, 174, 0.06), 0px 0px 1px rgba(31, 63, 174, 0.06)
+      border-radius: 30px
+      .circle
+        width: 100px
+        height: 100px
+        background-color: #5779F0
+        border-radius: 50%
+        @include centerMix
+        margin: auto
+        margin-bottom: 21px
+      .tarif
+        font-size: 24px
+        color: #000
+        font-weight: 600
+        margin-bottom: 12px
+      .price
+        display: flex
+        align-items: center
+        justify-content: center
+        .dollar
+          font-size: 44px
+          color: #0D1D52
+          font-weight: 600
+        .pere
+          color: #BEC5DF
+          font-size: 25px
+          font-weight: 500
+          margin: 0 9px 0 9px
+          margin-top: -7px
+        .date
+          font-size: 16px
+          color: #BEC5DF
+          font-weight: 600
+          margin: 0
+      .advantage
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: 100%
+        margin-bottom: 15px
+        span
+          margin-bottom: 0
+      .advantage.non-active
+        color: #BEC5DF
+        font-weight: 500
+      button
+        @include blueBtn(100%, 60px)
+        margin-top: 13px
+        @include centerMix
+        span
+          color: #fff
+          margin-bottom: 0
+          font-size: 16px
+          font-weight: 600
+          margin-left: 13px
+      &.premium
+        border: 1px solid #5779F0
+
+.and-numbers
+  margin-top: 101px
+  margin-bottom: 90px
+  .card
+    width: 100%
+    background-color: #5779F0
+    padding: 71px 0 81px 96px
+    background: #5779F0
+    box-shadow: 0px 17.798px 26.6969px rgba(0, 0, 0, 0.06), 0px 2.22474px 6.67423px rgba(0, 0, 0, 0.04), 0px 0px 1.11237px rgba(0, 0, 0, 0.04)
+    border-radius: 40px
+
+    span
+      font-size: 54px
+      font-weight: bold
+      color: #FFFFFF
+      max-width: 600px
+      margin-bottom: 40px
+      line-height: 120%
+    button
+      @include dashedButton(163px, 60px)
+      svg
+        margin-left: 8px
+
+footer
+  padding-bottom: 40px
+  .container
+    .top-part
+      margin-bottom: 50px
+      display: flex
+      justify-content: space-between
+      ul
+        display: flex
+        align-items: center
+        width: 396px
+        justify-content: space-between
+        li
+          color: #5779F0
+          font-size: 24px
+          transition: color .3s ease
+          font-weight: bold
+
+    .bottom-part
+      display: flex
+      justify-content: space-between
+      span
+        color: #BAC5EA
+        font-size: 18px
+        font-weight: normal
+      .contacts
+        display: flex
+        width: 396px
+        justify-content: space-between
+        align-items: center
+        .socLinks
+          margin-left: 135px
+          a
+            &:first-child
+              margin-right: 17px
+
+.lkWrapper
+  display: flex
+  padding: 25px 0 25px 0
+  height: 100vh
+  overflow: hidden
+  background-color: #F2F3F7
+  .dashWrapper
+    padding-left: 48px
+    padding-right: 38px
+    border-right: 2px dashed #BAC5EA
+    display: flex
+    flex-direction: column
+    .logo
+      margin-bottom: 43px
+      display: block
+    .linksDash
+      background-color: #fff
+      border-radius: 12px
+      padding: 46px 0
+      width: 214px
+      height: 200px
+      display: flex
+      flex-direction: column
+      justify-content: center
+      li
+        transition: all .3s ease
+        position: relative
+        &:nth-child(2)
+          margin: 5px 0
+        .active
+          color: #5779F0
+          //border-left: 3px solid #5779F0
+          &:before
+            content: ''
+            position: absolute
+            display: block
+            left: 0
+            height: 100%
+            width: 3px
+            background-color: #5779F0
+        a
+          display: flex
+          align-items: center
+          height: 40px
+          padding-left: 25px
+          padding-right: 25px
+          span
+            font-weight: 600
+          svg
+            margin-right: 25px
+            fill: red !important
+
+    .bottomEls
+      margin-top: auto
+      .settings
+        padding: 14px 16px
+        width: 214px
+        height: 72px
+        background-color: #fff
+        border-radius: 12px
+        display: flex
+        align-items: center
+        &:last-child
+          margin-top: 10px
+        .icon
+          width: 40px
+          height: 40px
+          background: #FFFFFF
+          @include centerMix
+          border: 1px dashed #BEC5DF
+          box-sizing: border-box
+          box-shadow: 0px 10px 20px rgba(31, 63, 174, 0.06), 0px 2px 6px rgba(31, 63, 174, 0.06), 0px 0px 1px rgba(31, 63, 174, 0.06)
+          border-radius: 10px
+        span
+          color: #BEC5DF
+          font-weight: 600
+          margin-left: 18px
+          max-width: 120px
+  .contentWrapper
+    width: 100%
+    padding-right: $ppd
+    padding-left: $ppd
+    overflow: auto
+    position: relative
+    .personalData
+      display: flex
+      align-items: center
+      //position: fixed
+      //z-index: 100
+      //background-color: #F2F3F7
+      //right: 0
+      //top: 0
+      //padding-right: $ppd
+      //padding-left: $ppd
+      //padding-top: 25px
+      //padding-bottom: 25px
+      .filters
+        display: flex
+        justify-content: space-between
+        width: 100%
+        margin-right: 30px
+        li
+          font-weight: bold
+          color: #BEC5DF
+          padding: 8px 12px
+          cursor: pointer
+          transition: all .2s ease
+          &.active
+            background: #5779F0
+            box-shadow: 0px 10px 20px rgba(31, 63, 174, 0.06), 0px 2px 6px rgba(31, 63, 174, 0.06), 0px 0px 1px rgba(31, 63, 174, 0.06)
+            border-radius: 50px
+            color: #fff
+      .endData
+        display: flex
+        margin-left: auto
+        .premium
+          @include centerMix
+          width: 175px
+          height: 50px
+          background: linear-gradient(96.06deg, #5779F0 -30%, #A939EE 100%)
+          box-shadow: 0px 10px 20px rgba(31, 63, 174, 0.06), 0px 2px 6px rgba(31, 63, 174, 0.06), 0px 0px 1px rgba(31, 63, 174, 0.06)
+          border-radius: 100px
+          color: #fff
+          font-weight: bold
+          span
+            margin-left: 13px
+        .level
+          background: #FFFFFF
+          box-shadow: 27.0763px 50.2845px 67.6907px rgba(7, 21, 72, 0.03), 0px 1.93402px 5.80206px rgba(31, 63, 174, 0.06), 0px 0px 0.96701px rgba(31, 63, 174, 0.06)
+          border-radius: 15px
+          width: 144.87px
+          height: 50px
+          margin: 0 20px
+        .avatar
+          img
+            width: 50px
+            height: 50px
+    .contentData
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      margin-top: 60px
+      height: 100%
+      .card
+        width: 268px
+        height: 409px
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), linear-gradient(180deg, rgba(0, 0, 0, 0.33) 0%, rgba(255, 255, 255, 0) 24.69%)
+        box-shadow: 0px 10px 20px rgba(31, 63, 174, 0.06), 0px 2px 6px rgba(31, 63, 174, 0.06), 0px 0px 1px rgba(31, 63, 174, 0.06)
+        border-radius: 20px
+        margin-bottom: 30px
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+
+
+
+
+
+

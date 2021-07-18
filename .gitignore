@@ -1,5 +1,5 @@
-./client/node_modules/
-./client/.next/
+/client/node_modules/
+/client/.next/
 .next/
-./server/node_modules/
-./server/.idea/
+/server/node_modules/
+/server/.idea/

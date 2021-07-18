@@ -4,6 +4,7 @@ import close from "../assets/svg/close.svg";
 import authImg from "../assets/img/auth-img.png"
 import axios from "axios"
 import RegistrationTab from "./authTabs/RegistrationTab";
+import LoginTab from "./authTabs/LoginTab";
 
 interface IAuth {
   setAuthVisible: Dispatch<React.SetStateAction<boolean>>
@@ -15,6 +16,11 @@ interface IRegistrationTab {
   name: string
 }
 
+interface ILoginTab {
+  email: string
+  password: string
+}
+
 const Auth = (props: IAuth) => {
 
   let [loading, setLoading] = useState(false);
@@ -23,8 +29,8 @@ const Auth = (props: IAuth) => {
     try {
       setLoading(true)
       const user = await axios.post('http://localhost:5000/auth/registration', {name: data.name, email: data.email, password: data.password})
-      setTimeout(() => setLoading(false), 500)
       console.log(user)
+      setTimeout(() => setLoading(false), 500)
       return user
     } catch (e) {
       console.log(e.messge)
@@ -32,10 +38,24 @@ const Auth = (props: IAuth) => {
     }
   }
 
+  const login = async (data: ILoginTab) => {
+    try {
+      setLoading(true)
+      const user = await axios.post('http://localhost:5000/auth/login', { email: data.email, password: data.password })
+      console.log(user)
+      setTimeout(() => setLoading(false), 500)
+      return user
+    } catch (e) {
+      console.log(e.messge)
+      setTimeout(() => setLoading(false), 500)
+    }
+  }
+
+
   return (
 
     <div className="auth">
-      <img onClick={() => props.setAuthVisible(false)} src={close.src} alt="close" className="close"/>
+      <img onClick={() => props.setAuthVisible(false)} src={close.src} alt="close" className="close" />
       <div className="auth__content">
         <h3>Your text, Andy!</h3>
         <p>
@@ -60,15 +80,8 @@ const Auth = (props: IAuth) => {
 
           <Tab.Content>
             <Tab.Pane eventKey="SingIn">
-              <label htmlFor="email">Email</label>
-              <input id="email" type="text"/>
-
-              <label htmlFor="password">Password</label>
-              <input id="password" type="text"/>
-
-              <button onClick={() => registration()}>Start the test</button>
+              <LoginTab login={login} />
             </Tab.Pane>
-
 
             <Tab.Pane eventKey="Register">
               <RegistrationTab

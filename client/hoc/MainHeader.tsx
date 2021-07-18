@@ -1,5 +1,5 @@
 import React, { Dispatch } from 'react'
-import logo from './../assets/img/logo.png'
+import logo from './../assets/img/logo.svg'
 import {Container} from 'reactstrap'
 
 interface IHeader {
@@ -30,7 +30,7 @@ const MainHeader = (props: IHeader) => {
             >
               Log in
             </button>
-            <button className="header__tyr">Try for free</button>
+            <button className="header__try">Try for free</button>
           </div>
         </Container>
         {/*<div className="container">*/}
