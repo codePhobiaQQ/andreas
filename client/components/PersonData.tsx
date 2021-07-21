@@ -1,5 +1,6 @@
 import React from 'react';
 import avatar from "../assets/img/avatar.png";
+import Image from "next/image"
 
 const PersonData = () => {
   return (
@@ -31,7 +32,7 @@ const PersonData = () => {
       </div>
       <div className="avatar">
         <a href="#">
-          <img src={avatar.src} alt="avatar"/>
+          <Image src={avatar} alt="avatar"/>
         </a>
       </div>
     </div>

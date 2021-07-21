@@ -23,31 +23,31 @@ interface ILoginTab {
 
 const Auth = (props: IAuth) => {
 
-  let [loading, setLoading] = useState(false);
+  let [loading, setLoadingPre] = useState(false);
 
   const registration = async (data: IRegistrationTab) => {
     try {
-      setLoading(true)
+      setLoadingPre(true)
       const user = await axios.post('http://localhost:5000/auth/registration', {name: data.name, email: data.email, password: data.password})
       console.log(user)
-      setTimeout(() => setLoading(false), 500)
+      setTimeout(() => setLoadingPre(false), 500)
       return user
     } catch (e) {
       console.log(e.messge)
-      setTimeout(() => setLoading(false), 500)
+      setTimeout(() => setLoadingPre(false), 500)
     }
   }
 
   const login = async (data: ILoginTab) => {
     try {
-      setLoading(true)
+      setLoadingPre(true)
       const user = await axios.post('http://localhost:5000/auth/login', { email: data.email, password: data.password })
       console.log(user)
-      setTimeout(() => setLoading(false), 500)
+      setTimeout(() => setLoadingPre(false), 500)
       return user
     } catch (e) {
       console.log(e.messge)
-      setTimeout(() => setLoading(false), 500)
+      setTimeout(() => setLoadingPre(false), 500)
     }
   }
 
