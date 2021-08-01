@@ -1,10 +1,11 @@
 import React, {Dispatch, useState} from 'react'
 import {Nav, Spinner, Tab} from 'react-bootstrap';
-import close from "../assets/svg/close.svg";
-import authImg from "../assets/img/auth-img.png"
-import axios from "axios"
+import Image from 'next/image'
+import axios, {AxiosResponse} from "axios"
 import RegistrationTab from "./authTabs/RegistrationTab";
 import LoginTab from "./authTabs/LoginTab";
+import { fetchWeaponsThunk } from '../redux/slices/UserSlice'
+import {useDispatch} from "react-redux";
 
 interface IAuth {
   setAuthVisible: Dispatch<React.SetStateAction<boolean>>
@@ -23,12 +24,16 @@ interface ILoginTab {
 
 const Auth = (props: IAuth) => {
 
+  // const dispatch = useDispatch()
+
   let [loading, setLoadingPre] = useState(false);
+  // const {login, registration, setLoading} = useActions()
+  // console.log(login)
 
-  const registration = async (data: IRegistrationTab) => {
+  const registration1 = async (data: IRegistrationTab) => {
     try {
       setLoadingPre(true)
-      const user = await axios.post('http://localhost:5000/auth/registration', {name: data.name, email: data.email, password: data.password})
+      const user = await axios.post('http://localhost:5000/auth/registration', { name: data.name, email: data.email, password: data.password })
       console.log(user)
       setTimeout(() => setLoadingPre(false), 500)
       return user
@@ -38,26 +43,34 @@ const Auth = (props: IAuth) => {
     }
   }
 
-  const login = async (data: ILoginTab) => {
+  const login1 = async (data: ILoginTab)=> {
     try {
-      setLoadingPre(true)
-      const user = await axios.post('http://localhost:5000/auth/login', { email: data.email, password: data.password })
-      console.log(user)
-      setTimeout(() => setLoadingPre(false), 500)
-      return user
+      // setLoadingPre(true)
+      // // const user = login({ email: data.email, password: data.password })
+      // setLoading(true)
+      // const user = await login({ email: data.email, password: data.password })
+      // console.log(user)
+      const user1 = await axios.post('http://localhost:5000/auth/login', { email: data.email, password: data.password })
+      // dispatch(setAuth(true))
+      // const user = await AuthServices.login(data.email, data.password)
+      console.log(user1)
+      // setTimeout(() => setLoadingPre(false), 500)
+      return user1
+
     } catch (e) {
       console.log(e.messge)
-      setTimeout(() => setLoadingPre(false), 500)
+      // setTimeout(() => setLoadingPre(false), 500)
     }
   }
 
+  const dispatch = useDispatch()
 
   return (
-
     <div className="auth">
-      <img onClick={() => props.setAuthVisible(false)} src={close.src} alt="close" className="close" />
+      <img onClick={() => props.setAuthVisible(false)} src="/assets/svg/close.svg" width={30} height={30} alt="close" className="close" />
       <div className="auth__content">
         <h3>Your text, Andy!</h3>
+        <button onClick={() => {dispatch(fetchWeaponsThunk())}}>test</button>
         <p>
           Write us whatever you want. We will answer to you as fast as possible.
         </p>
@@ -80,12 +93,12 @@ const Auth = (props: IAuth) => {
 
           <Tab.Content>
             <Tab.Pane eventKey="SingIn">
-              <LoginTab login={login} />
+              <LoginTab login1={login1} />
             </Tab.Pane>
 
             <Tab.Pane eventKey="Register">
               <RegistrationTab
-                registration={registration}
+                registration1={registration1}
               />
             </Tab.Pane>
             <Tab.Pane eventKey="Test">
@@ -96,7 +109,7 @@ const Auth = (props: IAuth) => {
 
       </div>
       <div className="auth__img">
-        <img src={authImg.src} alt="andreas"/>
+        <Image src="/assets/img/auth-img.png" width={475} height={613} alt="andreas"/>
       </div>
     </div>
   );

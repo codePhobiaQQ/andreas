@@ -4,11 +4,6 @@ import {useEffect, useState} from "react";
 import Auth from "../components/auth";
 import Image from "next/image"
 import {Container, Row, Col} from 'reactstrap'
-import planetImg from './../assets/img/planet.png'
-import playImg from './../assets/img/play.png'
-import quizePhoto from './../assets/img/quizePhoto.png'
-import phonePhoto from './../assets/img/phonePhoto.png'
-import logoFooter from './../assets/img/logo-footer.png'
 import Tick from "../components/UI/tick";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 
@@ -16,10 +11,10 @@ export default function Home() {
 
   const [authVisible, setAuthVisible] = useState(false)
 
-  const state = useTypedSelector(state => state.user)
-  useEffect(() => {
-    console.log(state)
-  }, [])
+  // const state = useTypedSelector(state => state.user)
+  // useEffect(() => {
+  //   console.log(state)
+  // }, [])
 
   return (
     <MainHeader
@@ -54,16 +49,23 @@ export default function Home() {
               <button className="blueButton">
                 Try for free
               </button>
+
               <div className="videoButtonWrapper">
                 <button className="videoButton">
-                  <Image src={playImg} alt="play"/>
+                  <Image src="/assets/img/play.png" alt="play" width={14} height={16}/>
                 </button>
                 <span>Play video</span>
               </div>
             </div>
           </div>
           <div className="imgWrapper">
-            <Image src={planetImg} alt="planet"/>
+            <Image
+              src="/assets/img/planet.png"
+              alt="planet"
+              width={750}
+              height={750}
+              priority
+            />
           </div>
         </Container>
       </section>
@@ -88,7 +90,7 @@ export default function Home() {
             </div>
           </div>
           <div className="imgWrapper">
-            <Image src={quizePhoto} alt="planet"/>
+            <Image src="/assets/img/quizePhoto.png" width={730} height={495} alt="planet"/>
           </div>
         </Container>
       </section>
@@ -184,7 +186,7 @@ export default function Home() {
             </p>
           </div>
           <div className="imgWrapper">
-            <Image src={phonePhoto} alt="planet"/>
+            <Image src="/assets/img/phonePhoto.png" width={345} height={682} alt="telephone"/>
           </div>
         </Container>
       </section>
@@ -201,8 +203,7 @@ export default function Home() {
             <div className="card">
               <div className="circle">
                 <svg width="26" height="44" viewBox="0 0 26 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M21.9266 3.12793L13.3408 13.5193L4.75488 3.12793" stroke="white" stroke-width="5"
-                        stroke-linecap="round"/>
+                  <path d="M21.9266 3.12793L13.3408 13.5193L4.75488 3.12793" stroke="white" strokeWidth="5"/>
                   <path
                     d="M12.967 18.5205C6.17007 18.5205 0.662109 24.0282 0.662109 30.8251C0.662109 37.6201 6.17007 43.128 12.967 43.128C19.762 43.128 25.2717 37.6201 25.2717 30.8251C25.2717 24.0282 19.7623 18.5205 12.967 18.5205ZM17.4035 37.6575L12.9673 35.3237L8.53116 37.6575L9.37704 32.712L5.78502 29.2126L10.7474 28.4896L12.9673 23.9933L15.1882 28.4896L20.1514 29.2126L16.5602 32.712L17.4035 37.6575Z"
                     fill="white"/>
@@ -297,8 +298,8 @@ export default function Home() {
                   </span>
                   <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.466797" y="0.149414" width="20" height="20" rx="5" fill="#5779F0"/>
-                    <path d="M6.4668 9.68918L9.52562 12.4828L15.1335 6.81616" stroke="white" stroke-width="2"
-                          stroke-linecap="round"/>
+                    <path d="M6.4668 9.68918L9.52562 12.4828L15.1335 6.81616" stroke="white" strokeWidth="2"
+                          strokeLinecap="round"/>
                   </svg>
 
                 </div>
@@ -344,7 +345,7 @@ export default function Home() {
       <footer>
         <Container>
           <div className="top-part">
-            <Image src={logoFooter} alt="logo"/>
+            <Image src="/assets/img/logo-footer.png" width={409} height={106} alt="logo"/>
             <ul className="links">
               <li><a href="#">Test</a></li>
               <li><a href="#">Contacts</a></li>

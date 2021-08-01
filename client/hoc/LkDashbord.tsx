@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from './../assets/img/logo.svg'
+import logo from '../public/assets/img/logo.svg'
 import {useRouter} from 'next/router'
 import Link from 'next/link'
 

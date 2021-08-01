@@ -3,15 +3,16 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/main.sass'
 import type { AppProps } from 'next/app'
 import React, {FC} from 'react';
-import {wrapper} from "../store";
-
-// function MyApp({ Component, pageProps }: AppProps) {
-//   return <Component {...pageProps} />
-// }
-// export default MyApp
+import withRedux from "next-redux-wrapper";
+import { makeStore } from '../redux/store';
 
 const MyApp: FC<AppProps> = ({Component, pageProps}) => (
-  <Component {...pageProps} />
+  // <Provider store={store()}>
+    <Component {...pageProps} />
+  // {/*</Provider>*/}
 );
 
-export default wrapper.withRedux(MyApp);
+// const makeStore = () => store;
+// const wrapper = createWrapper(makeStore)
+
+export default withRedux(makeStore)( MyApp );

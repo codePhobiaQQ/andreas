@@ -1,6 +1,6 @@
 import React, { Dispatch } from 'react'
-import logo from './../assets/img/logo.svg'
 import {Container} from 'reactstrap'
+import Image from "next/image";
 
 interface IHeader {
   children: React.ReactNode
@@ -15,7 +15,7 @@ const MainHeader = (props: IHeader) => {
         <Container>
           <div className="header__logo">
             <a href="#">
-              <img src={logo.src} alt=""/>
+              <Image src="/assets/svg/logo.svg" width={182} height={100} alt="Logo"/>
             </a>
           </div>
           <ul className="header__header-links">

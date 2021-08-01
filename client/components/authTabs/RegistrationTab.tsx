@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import {Tab} from "react-bootstrap";
 
 interface IRegistration {
-  registration: any
+  registration1: any
 }
 
 const RegistrationTab = (props: IRegistration) => {
@@ -23,7 +23,7 @@ const RegistrationTab = (props: IRegistration) => {
       <label htmlFor="Reg-password">Password</label>
       <input onChange={(e) => setPassword(e.target.value)} id="Reg-password" type="text"/>
 
-      <button onClick={() => props.registration({name, email, password})}>Start the test</button>
+      <button onClick={() => props.registration1({name, email, password})}>Start the test</button>
     </>
   );
 };

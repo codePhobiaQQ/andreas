@@ -11,24 +11,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9634fc3f-2239-444f-a873-094217e759fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/hooks/useActions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/hooks/useTypedSelector.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/models/IUser.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/models/response/AuthResponse.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/services/auth.services.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/store/action-creators/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/store/action-creators/user.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/store/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/store/reducers/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/store/reducers/user.reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/store/types/user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/assets/svg/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/redux/slices/UserSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/redux/store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/services/user.services.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/auth-img.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/auth-img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/avatar.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/avatar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/cartBg.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/cartBg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/logo-footer.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/logo-footer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/logo-footer.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/logo-footer.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/medal.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/medal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/phonePhoto.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/phonePhoto.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/planet.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/planet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/planet.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/planet.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/play.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/play.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/play.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/play.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/plenet.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/plenet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/quizePhoto.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/quizePhoto.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/star.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/star.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/img/tick.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/img/tick.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/assets/svg/close.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/assets/svg/close.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/components/PersonData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/PersonData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/UI/tick.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/UI/tick.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/components/auth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/auth.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/authTabs/LoginTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/authTabs/LoginTab.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/authTabs/RegistrationTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/authTabs/RegistrationTab.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/hoc/LkDashbord.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/hoc/LkDashbord.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/hoc/MainHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/hoc/MainHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/hooks/useActions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/hooks/useActions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/http/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/http/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/services/auth.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/services/auth.services.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/action-creators/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/action-creators/user.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/reducers/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/reducers/user.reducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/store/types/user.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/styles/main.sass" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/main.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,13 +86,24 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/public/assets/svg" />
+      <recent name="$PROJECT_DIR$/client/public" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/client/assets/img" />
       <recent name="$PROJECT_DIR$/client/assets/svg" />
-      <recent name="$PROJECT_DIR$/client" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev (1)">
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
@@ -98,6 +137,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev (1)" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.start:dev" />
         <item itemvalue="npm.dev" />
       </list>
@@ -119,6 +159,11 @@
       <workItem from="1626346151626" duration="33170000" />
       <workItem from="1626677941301" duration="7592000" />
       <workItem from="1626768039526" duration="2387000" />
+      <workItem from="1626889802247" duration="6600000" />
+      <workItem from="1626949609923" duration="4187000" />
+      <workItem from="1626963791603" duration="4298000" />
+      <workItem from="1627066468099" duration="61000" />
+      <workItem from="1627775605148" duration="6943000" />
     </task>
     <servers />
   </component>
@@ -150,41 +195,43 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="375" y="232" key="EditFileWatcherDialog/0.0.1440.900@0.0.1440.900" timestamp="1626356848369" />
-    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1626686302938">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1899" height="305" key="GridCell.Tab.0.bottom" timestamp="1627808725634">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1626686302938" />
-    <state width="1899" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1626343524063" />
+    <state width="1899" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1627808725634" />
     <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.25.1440.783@0.25.1440.783" timestamp="1626502872954" />
-    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1626686302937">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1899" height="305" key="GridCell.Tab.0.center" timestamp="1627808725633">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1626686302937" />
-    <state width="1899" height="305" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1626343524062" />
+    <state width="1899" height="305" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1627808725633" />
     <state width="1419" height="245" key="GridCell.Tab.0.center/0.25.1440.783@0.25.1440.783" timestamp="1626502872947" />
-    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1626686302935">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1899" height="305" key="GridCell.Tab.0.left" timestamp="1627808725632">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1626686302935" />
-    <state width="1899" height="305" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1626343524061" />
+    <state width="1899" height="305" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1627808725632" />
     <state width="1419" height="245" key="GridCell.Tab.0.left/0.25.1440.783@0.25.1440.783" timestamp="1626502872940" />
-    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1626686302937">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1899" height="305" key="GridCell.Tab.0.right" timestamp="1627808725634">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1626686302937" />
-    <state width="1899" height="305" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1626343524063" />
+    <state width="1899" height="305" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1627808725634" />
     <state width="1419" height="245" key="GridCell.Tab.0.right/0.25.1440.783@0.25.1440.783" timestamp="1626502872952" />
-    <state x="420" y="207" width="599" height="486" key="find.popup" timestamp="1626682884321">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="560" y="248" width="799" height="584" key="find.popup" timestamp="1626964241632">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="420" y="207" width="599" height="486" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1626682884321" />
+    <state x="560" y="248" width="799" height="584" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1626964241632" />
     <state x="385" y="210" key="run.anything.popup" timestamp="1626631639235">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1626631639235" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1626678540400">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="513" y="235" width="894" height="812" key="search.everywhere.popup" timestamp="1626890272847">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1626678540400" />
+    <state x="513" y="235" width="894" height="812" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1626890272847" />
   </component>
 </project>

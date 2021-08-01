@@ -9,13 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/react-redux": "^7.1.18",
+    "@reduxjs/toolkit": "^1.6.1",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.0-beta3",
     "install": "^0.13.0",
     "next": "11.0.1",
+    "next-images": "^1.8.1",
     "next-redux-wrapper": "^7.0.2",
-    "node-sass": "^6.0.1",
     "npm": "^7.19.1",
     "react": "17.0.2",
     "react-bootstrap": "^1.6.1",
@@ -29,7 +29,9 @@
     "sass": "^1.35.2"
   },
   "devDependencies": {
+    "@types/next-redux-wrapper": "^3.0.0",
     "@types/react": "17.0.14",
+    "@types/react-redux": "^7.1.18",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
     "typescript": "4.3.5"
