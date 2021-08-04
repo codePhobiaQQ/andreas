@@ -36,7 +36,7 @@ let AuthController = class AuthController {
             maxAge: 30 * 24 * 60 * 60 * 1000,
             httpOnly: true,
         });
-        return response.json({ user });
+        return response.json({ user: user.user, accessToken: user.accessToken });
     }
     async logout(response, request) {
         const { token } = request.cookies;

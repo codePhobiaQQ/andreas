@@ -4,6 +4,7 @@ import { AuthService } from './auth.service';
 import { User } from '../user/user.entity';
 import { TokenService } from '../token/token.service';
 import { Request, Response } from 'express';
+import { ReturnLoginDto } from './dto/login-user.dto';
 
 interface IRegister {
   user: User;
@@ -43,7 +44,7 @@ export class AuthController {
       maxAge: 30 * 24 * 60 * 60 * 1000,
       httpOnly: true,
     });
-    return response.json({ user });
+    return response.json({ user: user.user, accessToken: user.accessToken });
   }
 
   @Post('logout')

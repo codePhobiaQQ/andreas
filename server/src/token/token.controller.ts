@@ -30,6 +30,6 @@ export class TokenController {
       maxAge: 30 * 24 * 60 * 60 * 1000,
       httpOnly: true,
     });
-    return response.json({ accessToken, refreshToken });
+    return response.json({ accessToken });
   }
 }

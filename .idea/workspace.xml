@@ -11,16 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9634fc3f-2239-444f-a873-094217e759fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/components/UI/InputCustom.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/pages/add-video.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/UI/tick.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/UI/tick.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/hoc/LkDashbord.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/hoc/LkDashbord.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/hoc/MainHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/hoc/MainHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/http/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/http/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/livestream.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/livestream.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/services/user.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/services/user.services.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +123,7 @@
       <workItem from="1626949609923" duration="4187000" />
       <workItem from="1626963791603" duration="4298000" />
       <workItem from="1627066468099" duration="61000" />
-      <workItem from="1627775605148" duration="60137000" />
+      <workItem from="1627775605148" duration="60976000" />
     </task>
     <servers />
   </component>
@@ -197,11 +188,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="469" y="179" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1627979926304" />
-    <state x="560" y="248" width="799" height="584" key="find.popup" timestamp="1628077551851">
+    <state x="560" y="248" width="799" height="584" key="find.popup" timestamp="1628091746345">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="420" y="207" width="599" height="486" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1626682884321" />
-    <state x="560" y="248" width="799" height="584" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1628077551851" />
+    <state x="560" y="248" width="799" height="584" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1628091746345" />
     <state x="385" y="210" key="run.anything.popup" timestamp="1626631639235">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

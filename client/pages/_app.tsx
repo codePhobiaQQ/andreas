@@ -20,13 +20,6 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   const route = useRouter();
 
   useEffect(() => {
-    // (async function test() {
-    //   const token = await axios.get("http://localhost:5000/token/test", {
-    //     withCredentials: true,
-    //   });
-    //   console.log("token", token);
-    // })();
-
     if (localStorage.getItem("token")) {
       dispatch(isLogged());
     } else {

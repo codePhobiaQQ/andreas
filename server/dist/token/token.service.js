@@ -34,7 +34,7 @@ let TokenService = class TokenService {
         };
         const accessToken = this.jwtService.sign(payload, {
             secret: process.env.SECRET_ACCESS_TOEKN,
-            expiresIn: '5s',
+            expiresIn: '30m',
         });
         const refreshToken = this.jwtService.sign(payload, {
             secret: process.env.SECRET_REFRESH_TOEKN,
