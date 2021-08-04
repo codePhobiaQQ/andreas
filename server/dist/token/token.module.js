@@ -13,12 +13,13 @@ const typeorm_1 = require("@nestjs/typeorm");
 const user_entity_1 = require("../user/user.entity");
 const jwt_1 = require("@nestjs/jwt");
 const token_entity_1 = require("./token.entity");
+const token_controller_1 = require("./token.controller");
 let TokenModule = class TokenModule {
 };
 TokenModule = __decorate([
     common_1.Module({
         providers: [token_service_1.TokenService],
-        controllers: [],
+        controllers: [token_controller_1.TokenController],
         imports: [typeorm_1.TypeOrmModule.forFeature([user_entity_1.User, token_entity_1.Token]), jwt_1.JwtModule.register({})],
         exports: [token_service_1.TokenService],
     })

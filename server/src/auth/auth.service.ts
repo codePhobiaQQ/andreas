@@ -70,10 +70,8 @@ export class AuthService {
     };
   }
 
-  async logout(token: string) {
-    console.log(token);
-    const tokenData = await this.tokenService.deleteToken(token);
-    return tokenData;
+  async logout(token: string): Promise<void> {
+    await this.tokenService.deleteToken(token);
   }
 
   //Валлидируем логин и пароль (есть ли такой пользователь в таблице)

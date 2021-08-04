@@ -28,7 +28,7 @@ let AuthController = class AuthController {
             maxAge: 30 * 24 * 60 * 60,
             httpOnly: true,
         });
-        return response.json({ user });
+        return response.json(user);
     }
     async login(userDto, response) {
         const user = await this.authService.login(userDto);
@@ -40,10 +40,9 @@ let AuthController = class AuthController {
     }
     async logout(response, request) {
         const { token } = request.cookies;
-        const tokenData = await this.authService.logout(token);
-        console.log('userData', tokenData);
+        await this.authService.logout(token);
         response.clearCookie('token');
-        return response.json(token);
+        return response.json({ message: 'success' });
     }
 };
 __decorate([

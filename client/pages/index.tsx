@@ -52,7 +52,7 @@ export default function Home() {
 
               <div className="videoButtonWrapper">
                 <button className="videoButton">
-                  <Image src="/assets/img/play.png" alt="play" width={14} height={16}/>
+                  <Image src="/assets/img/play.png" alt="play" width={14} height={16} priority={true}/>
                 </button>
                 <span>Play video</span>
               </div>
@@ -64,7 +64,7 @@ export default function Home() {
               alt="planet"
               width={750}
               height={750}
-              priority
+              priority={true}
             />
           </div>
         </Container>

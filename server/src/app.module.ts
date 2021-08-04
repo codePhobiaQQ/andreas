@@ -5,10 +5,12 @@ import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { RoleModule } from './role/role.module';
 import { TokenModule } from './token/token.module';
+import { VideoController } from './video/video.controller';
+import { VideoModule } from './video/video.module';
 import 'reflect-metadata';
 
 @Module({
-  controllers: [],
+  controllers: [VideoController],
   providers: [],
   imports: [
     ConfigModule.forRoot({
@@ -19,6 +21,7 @@ import 'reflect-metadata';
     AuthModule,
     RoleModule,
     TokenModule,
+    VideoModule,
   ],
 })
 export class AppModule {}

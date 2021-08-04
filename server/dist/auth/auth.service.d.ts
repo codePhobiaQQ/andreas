@@ -13,6 +13,6 @@ export declare class AuthService {
     constructor(usersRepository: Repository<User>, userService: UserService, roleService: RoleService, tokenService: TokenService);
     registration(userDto: CreateUserDto): Promise<any>;
     login(loginDto: LoginUserDto): Promise<ReturnLoginDto>;
-    logout(token: string): Promise<import("typeorm").DeleteResult>;
+    logout(token: string): Promise<void>;
     validateUser(loginDto: LoginUserDto): Promise<User>;
 }

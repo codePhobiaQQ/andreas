@@ -3,7 +3,7 @@ import { GenerateTokenDto } from './dto/generate-token.dto';
 import { Token } from './token.entity';
 import { DeleteResult, Repository } from 'typeorm';
 import { TokenDto } from './dto/token.dto';
-import { User } from '../user/user.entity';
+import { UserDtoToClient } from 'src/auth/dto/login-user.dto';
 interface ITokens {
     accessToken: string;
     refreshToken: string;
@@ -15,9 +15,9 @@ export declare class TokenService {
     generateToken(generateTokenDto: GenerateTokenDto): Promise<ITokens>;
     saveToken(tokenDto: TokenDto): Promise<Token>;
     deleteToken(token: string): Promise<DeleteResult>;
-    validateAccessToken(token: string): Promise<any>;
+    validateAccessToken(token: string): Promise<UserDtoToClient>;
     validateRefreshToken(token: string): Promise<any>;
-    generateNewToken(user: User): Promise<string>;
+    refresh(token: string): Promise<ITokens>;
     findToken(refreshToken: string): Promise<Token>;
 }
 export {};

@@ -15,9 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TokenService = void 0;
 const common_1 = require("@nestjs/common");
 const jwt_1 = require("@nestjs/jwt");
+const generate_token_dto_1 = require("./dto/generate-token.dto");
 const token_entity_1 = require("./token.entity");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
+const login_user_dto_1 = require("../auth/dto/login-user.dto");
 let TokenService = class TokenService {
     constructor(jwtService, tokenRegister) {
         this.jwtService = jwtService;
@@ -56,12 +58,13 @@ let TokenService = class TokenService {
     }
     async deleteToken(token) {
         try {
-            const tokenData = await this.tokenRegister.delete({ refreshToken: token });
+            const tokenData = await this.tokenRegister.delete({
+                refreshToken: token,
+            });
             return tokenData;
         }
         catch (e) {
-            console.log(e);
-            throw new common_1.UnauthorizedException('Пользователь не залогинен');
+            throw new common_1.UnauthorizedException('Пользователь не авторизирован');
         }
     }
     async validateAccessToken(token) {
@@ -69,11 +72,11 @@ let TokenService = class TokenService {
             const userData = this.jwtService.verify(token, {
                 secret: process.env.SECRET_ACCESS_TOEKN,
             });
-            console.log(userData);
-            return userData;
+            const userToClient = new login_user_dto_1.UserDtoToClient(userData);
+            return userToClient;
         }
         catch (e) {
-            return null;
+            throw new common_1.UnauthorizedException('Пользователь не авторизирован');
         }
     }
     async validateRefreshToken(token) {
@@ -81,28 +84,43 @@ let TokenService = class TokenService {
             const userData = this.jwtService.verify(token, {
                 secret: process.env.SECRET_REFRESH_TOEKN,
             });
-            console.log(userData);
             return userData;
         }
         catch (e) {
-            return null;
+            throw new common_1.HttpException('Неваллидный токен', 401);
         }
     }
-    async generateNewToken(user) {
-        const payload = {
-            email: user.email,
-            id: user.id,
-            roles: user.roles,
-            isActive: user.isActive,
-        };
-        return this.jwtService.sign(payload, {
-            secret: process.env.SECRET_REFRESH_TOEKN || 'secret_refresh',
-            expiresIn: '24h',
-        });
+    async refresh(token) {
+        try {
+            await this.findToken(token);
+            const isValid = await this.validateRefreshToken(token);
+            if (!isValid) {
+                throw new common_1.UnauthorizedException('Пользователь не авторизирован');
+            }
+            const userData = this.jwtService.verify(token, {
+                secret: process.env.SECRET_REFRESH_TOEKN,
+            });
+            const userDataNormal = new generate_token_dto_1.GenerateTokenDto(userData.id, userData.email, userData.roles, userData.isActive);
+            const { accessToken, refreshToken } = await this.generateToken(userDataNormal);
+            await this.saveToken({ userId: isValid.id, refreshToken });
+            return { accessToken, refreshToken };
+        }
+        catch (e) {
+            console.log(e);
+            return e;
+        }
     }
     async findToken(refreshToken) {
-        const tokenData = await this.tokenRegister.findOne({ where: refreshToken });
-        return tokenData;
+        try {
+            const tokenData = await this.tokenRegister.findOne({
+                where: { refreshToken },
+            });
+            return tokenData;
+        }
+        catch (e) {
+            console.log(e);
+            throw new common_1.UnauthorizedException('Пользователь не авторизирован');
+        }
     }
 };
 TokenService = __decorate([

@@ -16,6 +16,7 @@ export declare class UserDtoToClient {
     email: any;
     id: any;
     isActive: any;
+    roles: any;
     constructor(user: any);
 }
 export {};

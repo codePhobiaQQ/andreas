@@ -4,7 +4,8 @@ import {
   Column,
   Entity,
   JoinTable,
-  ManyToMany, OneToOne,
+  ManyToMany,
+  OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Role } from '../role/role.entity';
@@ -22,6 +23,9 @@ export class User extends BaseEntity {
 
   @Column()
   name: string;
+
+  @Column({ nullable: true })
+  avatar: string;
 
   @Column({ default: false })
   banned: boolean;

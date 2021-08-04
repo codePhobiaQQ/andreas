@@ -1,6 +1,5 @@
 import {
   HttpException,
-  HttpStatus,
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common';
@@ -8,10 +7,9 @@ import { JwtService } from '@nestjs/jwt';
 import { GenerateTokenDto } from './dto/generate-token.dto';
 import { Token } from './token.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import {DeleteResult, Repository } from 'typeorm';
+import { DeleteResult, Repository } from 'typeorm';
 import { TokenDto } from './dto/token.dto';
-import { Request } from 'express';
-import { User } from '../user/user.entity';
+import { UserDtoToClient } from 'src/auth/dto/login-user.dto';
 
 interface ITokens {
   accessToken: string;
@@ -60,23 +58,24 @@ export class TokenService {
 
   async deleteToken(token: string): Promise<DeleteResult> {
     try {
-      const tokenData = await this.tokenRegister.delete({ refreshToken: token });
+      const tokenData = await this.tokenRegister.delete({
+        refreshToken: token,
+      });
       return tokenData;
     } catch (e) {
-      console.log(e);
-      throw new UnauthorizedException('Пользователь не залогинен');
+      throw new UnauthorizedException('Пользователь не авторизирован');
     }
   }
 
-  async validateAccessToken(token: string) {
+  async validateAccessToken(token: string): Promise<UserDtoToClient> {
     try {
       const userData = this.jwtService.verify(token, {
         secret: process.env.SECRET_ACCESS_TOEKN,
       });
-      console.log(userData);
-      return userData;
+      const userToClient = new UserDtoToClient(userData);
+      return userToClient;
     } catch (e) {
-      return null;
+      throw new UnauthorizedException('Пользователь не авторизирован');
     }
   }
 
@@ -85,28 +84,61 @@ export class TokenService {
       const userData = this.jwtService.verify(token, {
         secret: process.env.SECRET_REFRESH_TOEKN,
       });
-      console.log(userData);
       return userData;
     } catch (e) {
-      return null;
+      throw new HttpException('Неваллидный токен', 401);
     }
   }
 
-  async generateNewToken(user: User): Promise<string> {
-    const payload = {
-      email: user.email,
-      id: user.id,
-      roles: user.roles,
-      isActive: user.isActive,
-    };
-    return this.jwtService.sign(payload, {
-      secret: process.env.SECRET_REFRESH_TOEKN || 'secret_refresh',
-      expiresIn: '24h',
-    });
+  async refresh(token: string): Promise<ITokens> {
+    try {
+      await this.findToken(token);
+      const isValid = await this.validateRefreshToken(token);
+      if (!isValid) {
+        throw new UnauthorizedException('Пользователь не авторизирован');
+      }
+      const userData = this.jwtService.verify(token, {
+        secret: process.env.SECRET_REFRESH_TOEKN,
+      });
+      const userDataNormal = new GenerateTokenDto(
+        userData.id,
+        userData.email,
+        userData.roles,
+        userData.isActive,
+      );
+      const { accessToken, refreshToken } = await this.generateToken(
+        userDataNormal,
+      );
+      await this.saveToken({ userId: isValid.id, refreshToken });
+      return { accessToken, refreshToken };
+    } catch (e) {
+      console.log(e);
+      return e;
+    }
   }
 
+  // async generateNewToken(user: User): Promise<string> {
+  //   const payload = {
+  //     email: user.email,
+  //     id: user.id,
+  //     roles: user.roles,
+  //     isActive: user.isActive,
+  //   };
+  //   return this.jwtService.sign(payload, {
+  //     secret: process.env.SECRET_REFRESH_TOEKN || 'secret_refresh',
+  //     expiresIn: '24h',
+  //   });
+  // }
+
   async findToken(refreshToken: string) {
-    const tokenData = await this.tokenRegister.findOne({ where: refreshToken });
-    return tokenData;
+    try {
+      const tokenData = await this.tokenRegister.findOne({
+        where: { refreshToken },
+      });
+      return tokenData;
+    } catch (e) {
+      console.log(e);
+      throw new UnauthorizedException('Пользователь не авторизирован');
+    }
   }
 }

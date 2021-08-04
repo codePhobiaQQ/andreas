@@ -6,6 +6,7 @@ export declare class User extends BaseEntity {
     email: string;
     password: string;
     name: string;
+    avatar: string;
     banned: boolean;
     banReason: string;
     isActive: boolean;

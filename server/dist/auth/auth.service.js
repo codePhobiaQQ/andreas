@@ -53,9 +53,7 @@ let AuthService = class AuthService {
         return Object.assign(Object.assign({}, tokens), { user: userDto });
     }
     async logout(token) {
-        console.log(token);
-        const tokenData = await this.tokenService.deleteToken(token);
-        return tokenData;
+        await this.tokenService.deleteToken(token);
     }
     async validateUser(loginDto) {
         const candidate = await this.usersRepository.findOne({

@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Req, Res } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, Res } from '@nestjs/common';
 import { CreateUserDto } from '../user/dto/create-user.dto';
 import { AuthService } from './auth.service';
 import { User } from '../user/user.entity';
@@ -28,7 +28,7 @@ export class AuthController {
       maxAge: 30 * 24 * 60 * 60,
       httpOnly: true,
     });
-    return response.json({ user });
+    return response.json(user);
     // return user;
   }
 
@@ -45,9 +45,8 @@ export class AuthController {
   @Post('logout')
   async logout(@Res() response: Response, @Req() request: Request) {
     const { token } = request.cookies;
-    const tokenData = await this.authService.logout(token);
-    console.log('userData', tokenData);
+    await this.authService.logout(token);
     response.clearCookie('token');
-    return response.json(token);
+    return response.json({ message: 'success' });
   }
 }

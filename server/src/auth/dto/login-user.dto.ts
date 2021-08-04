@@ -21,10 +21,12 @@ export class UserDtoToClient {
   email;
   id;
   isActive;
+  roles;
 
   constructor(user) {
     this.email = user.email;
     this.id = user.id;
     this.isActive = user.isActive;
+    this.roles = user.roles;
   }
 }

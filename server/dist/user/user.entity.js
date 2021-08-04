@@ -32,6 +32,10 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "name", void 0);
 __decorate([
+    typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], User.prototype, "avatar", void 0);
+__decorate([
     typeorm_1.Column({ default: false }),
     __metadata("design:type", Boolean)
 ], User.prototype, "banned", void 0);

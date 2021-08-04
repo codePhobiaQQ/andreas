@@ -9,6 +9,7 @@ class UserDtoToClient {
         this.email = user.email;
         this.id = user.id;
         this.isActive = user.isActive;
+        this.roles = user.roles;
     }
 }
 exports.UserDtoToClient = UserDtoToClient;
