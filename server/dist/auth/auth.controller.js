@@ -30,13 +30,13 @@ let AuthController = class AuthController {
         });
         return response.json(user);
     }
-    async login(userDto, response) {
+    async login(userDto, response, request) {
         const user = await this.authService.login(userDto);
-        response.cookie('token', user.refreshToken, {
+        await response.cookie('token', user.refreshToken, {
             maxAge: 30 * 24 * 60 * 60 * 1000,
             httpOnly: true,
         });
-        return response.json(user);
+        return response.json({ user });
     }
     async logout(response, request) {
         const { token } = request.cookies;
@@ -56,9 +56,10 @@ __decorate([
 __decorate([
     common_1.Post('login'),
     __param(0, common_1.Body()),
-    __param(1, common_1.Res()),
+    __param(1, common_1.Res({ passthrough: true })),
+    __param(2, common_1.Req()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_user_dto_1.CreateUserDto, Object]),
+    __metadata("design:paramtypes", [create_user_dto_1.CreateUserDto, Object, Object]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "login", null);
 __decorate([

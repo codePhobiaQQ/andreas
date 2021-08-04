@@ -3,8 +3,8 @@ import { Container } from "reactstrap";
 import Image from "next/image";
 import useTypedSelector from "../hooks/useTypedSelector";
 import Link from "next/link";
-import {useDispatch} from "react-redux";
-import {Logout} from "../redux/slices/UserSlice";
+import { useDispatch } from "react-redux";
+import { Logout } from "../redux/slices/UserSlice";
 
 interface IHeader {
   children: React.ReactNode;

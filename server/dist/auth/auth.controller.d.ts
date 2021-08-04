@@ -8,6 +8,6 @@ export declare class AuthController {
     private tokenService;
     constructor(authService: AuthService, tokenService: TokenService);
     registration(userDto: CreateUserDto, response: Response): Promise<Response<User>>;
-    login(userDto: CreateUserDto, response: Response): Promise<Response<any, Record<string, any>>>;
+    login(userDto: CreateUserDto, response: Response, request: Request): Promise<Response<any, Record<string, any>>>;
     logout(response: Response, request: Request): Promise<Response<any, Record<string, any>>>;
 }

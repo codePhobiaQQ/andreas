@@ -22,7 +22,7 @@ __decorate([
     __metadata("design:type", String)
 ], Video.prototype, "link", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true }),
+    typeorm_1.Column({ nullable: false }),
     __metadata("design:type", String)
 ], Video.prototype, "title", void 0);
 __decorate([
@@ -31,11 +31,15 @@ __decorate([
 ], Video.prototype, "preview", void 0);
 __decorate([
     typeorm_1.Column({ nullable: true }),
+    __metadata("design:type", String)
+], Video.prototype, "bigImg", void 0);
+__decorate([
+    typeorm_1.Column({ nullable: false }),
     __metadata("design:type", Number)
 ], Video.prototype, "price", void 0);
 __decorate([
     typeorm_1.Column({ nullable: true }),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], Video.prototype, "description", void 0);
 __decorate([
     typeorm_1.Column({ nullable: true }),

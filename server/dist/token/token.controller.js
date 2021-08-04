@@ -26,20 +26,19 @@ let TokenController = class TokenController {
     }
     async refresh(request, response) {
         const { token } = request.cookies;
-        return response.json({ token, rofl: 'rofl' });
+        console.log('token', token);
         const { accessToken, refreshToken } = await this.tokenService.refresh(token);
         response.cookie('token', refreshToken, {
             maxAge: 30 * 24 * 60 * 60 * 1000,
             httpOnly: true,
         });
-        response.set('Access-Control-Allow-Origin', 'http://localhost:3000');
-        return response.json({ accessToken });
+        return response.json({ accessToken, refreshToken });
     }
 };
 __decorate([
     common_1.Post('logged'),
     __param(0, common_1.Req()),
-    __param(1, common_1.Res()),
+    __param(1, common_1.Res({ passthrough: true })),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
@@ -47,7 +46,7 @@ __decorate([
 __decorate([
     common_1.Get('refresh'),
     __param(0, common_1.Req()),
-    __param(1, common_1.Res()),
+    __param(1, common_1.Res({ passthrough: true })),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)

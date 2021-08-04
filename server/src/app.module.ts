@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import {MiddlewareConsumer, Module, NestModule} from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
@@ -8,6 +8,7 @@ import { TokenModule } from './token/token.module';
 import { VideoController } from './video/video.controller';
 import { VideoModule } from './video/video.module';
 import 'reflect-metadata';
+import { ResponseMiddleware } from './middleware/response.middleware';
 
 @Module({
   controllers: [VideoController],
@@ -24,4 +25,8 @@ import 'reflect-metadata';
     VideoModule,
   ],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(ResponseMiddleware).forRoutes('/*');
+  }
+}

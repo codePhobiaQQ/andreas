@@ -17,7 +17,11 @@ const token_module_1 = require("./token/token.module");
 const video_controller_1 = require("./video/video.controller");
 const video_module_1 = require("./video/video.module");
 require("reflect-metadata");
+const response_middleware_1 = require("./middleware/response.middleware");
 let AppModule = class AppModule {
+    configure(consumer) {
+        consumer.apply(response_middleware_1.ResponseMiddleware).forRoutes('/*');
+    }
 };
 AppModule = __decorate([
     common_1.Module({

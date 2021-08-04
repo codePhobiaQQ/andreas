@@ -11,4 +11,16 @@ export default class UserServices {
   static async logged(): Promise<any> {
     return $api.post("/token/logged");
   }
+
+  static findRole(role: string, user: IUser): boolean {
+    let flag = false;
+    if (user.roles) {
+      user.roles.map((el, index) => {
+        if (el.name !== "admin") {
+          flag = true;
+        }
+      });
+    }
+    return flag;
+  }
 }

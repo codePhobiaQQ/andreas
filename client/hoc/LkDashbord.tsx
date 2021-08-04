@@ -3,6 +3,7 @@ import logo from "../public/assets/img/logo.svg";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import useTypedSelector from "../hooks/useTypedSelector";
+import UserServices from "../services/user.services";
 import { IUser } from "../models/IUser";
 
 interface IDashbord {
@@ -11,18 +12,23 @@ interface IDashbord {
 
 const LkDashbord = (props: IDashbord) => {
   const router = useRouter();
-  const [actveLink, setActiveLink] = useState();
+  const [activeLink, setActiveLink] = useState();
   const isAuth = useTypedSelector((state) => state.user.isAuth);
+  const user = useTypedSelector((state) => state.user.user);
   const isLoading = useTypedSelector((state) => state.app.isLoading);
-
-  console.log("isAuth", isAuth);
-  console.log("isLoading", isLoading);
+  const isAdmin = UserServices.findRole("admin", user);
 
   useEffect(() => {
     if (!isAuth && !isLoading) {
       router.push("/");
     }
-  });
+  }, []);
+
+  useEffect(() => {
+    if (router.pathname == "/add-video" && !isAdmin) {
+      router.push("/home");
+    }
+  }, [router.pathname]);
 
   return (
     <div className="lkWrapper">
@@ -57,10 +63,7 @@ const LkDashbord = (props: IDashbord) => {
           </li>
           <li>
             <Link href="/livestream">
-              <a
-                href="#"
-                className={router.asPath == "/livestream" ? "active" : ""}
-              >
+              <a className={router.asPath == "/livestream" ? "active" : ""}>
                 <svg
                   width="25"
                   height="20"
@@ -94,7 +97,7 @@ const LkDashbord = (props: IDashbord) => {
           </li>
           <li>
             <Link href="/blog">
-              <a href="#" className={router.asPath == "/blog" ? "active" : ""}>
+              <a className={router.asPath == "/blog" ? "active" : ""}>
                 <svg
                   width="25"
                   height="26"
@@ -122,6 +125,30 @@ const LkDashbord = (props: IDashbord) => {
               </a>
             </Link>
           </li>
+          {isAdmin ? (
+            <li>
+              <Link href="/add-video">
+                <a className={router.asPath == "/add-video" ? "active" : ""}>
+                  <svg
+                    width="25"
+                    height="20"
+                    viewBox="0 0 25 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.5001 4.03461L3.584 11.385C3.584 11.3954 3.58139 11.4107 3.57618 11.4315C3.57108 11.4521 3.56836 11.4671 3.56836 11.4777V18.9208C3.56836 19.1896 3.66661 19.4225 3.86306 19.6186C4.05945 19.8148 4.29202 19.9136 4.56082 19.9136H10.5151V13.9589H14.4852V19.9138H20.4395C20.7082 19.9138 20.9411 19.8152 21.1372 19.6186C21.3337 19.4227 21.4322 19.1896 21.4322 18.9208V11.4777C21.4322 11.4365 21.4266 11.4053 21.4166 11.385L12.5001 4.03461Z"
+                      fill="#5779F0"
+                    />
+                    <path
+                      d="M24.8276 9.71023L21.4318 6.88803V0.561289C21.4318 0.416654 21.3853 0.297709 21.292 0.204617C21.1995 0.111633 21.0805 0.0651417 20.9356 0.0651417H17.9584C17.8136 0.0651417 17.6947 0.111633 17.6015 0.204617C17.5086 0.297709 17.4622 0.416708 17.4622 0.561289V3.58505L13.6786 0.421597C13.3482 0.152803 12.9553 0.0184326 12.5004 0.0184326C12.0455 0.0184326 11.6527 0.152803 11.3219 0.421597L0.17231 9.71023C0.0689531 9.79278 0.0123049 9.90391 0.00176828 10.0435C-0.00871407 10.183 0.0274039 10.3048 0.110231 10.4081L1.07162 11.5556C1.15445 11.6486 1.26285 11.7055 1.39728 11.7263C1.52138 11.7367 1.64549 11.7004 1.76959 11.6177L12.5 2.67015L23.2306 11.6177C23.3135 11.6898 23.4218 11.7258 23.5563 11.7258H23.6029C23.7371 11.7054 23.8453 11.6482 23.9285 11.5554L24.89 10.408C24.9727 10.3045 25.0089 10.1829 24.9982 10.0433C24.9876 9.90407 24.9307 9.79295 24.8276 9.71023Z"
+                      fill="#5779F0"
+                    />
+                  </svg>
+                  <span>Add Video</span>
+                </a>
+              </Link>
+            </li>
+          ) : null}
         </ul>
         <div className="bottomEls">
           <Link href="#">
