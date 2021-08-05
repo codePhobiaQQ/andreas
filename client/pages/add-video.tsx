@@ -4,28 +4,39 @@ import InputCustom from "../components/UI/InputCustom";
 
 export interface AddVideoI {
   Title: string;
-  Link: string;
+  Video: string;
   Preview: any;
   BigImg: any;
   Price: number;
   Description: string;
-  level: string;
+  Level: string;
 }
 
 const AddVideo = () => {
   const [value, setValue] = useState<AddVideoI>({
     Title: "",
-    Link: "",
+    Video: "",
     Preview: "",
     BigImg: "",
     Price: 0,
     Description: "",
-    level: "basic",
+    Level: "basic",
   });
 
   useEffect(() => {
     console.log(value);
   }, [value]);
+
+  const addVideoHandler = () => {
+    const formData = new FormData();
+    formData.append("Title", value.Title);
+    formData.append("Video", value.Video);
+    formData.append("Preview", value.Preview);
+    formData.append("BigImg", value.BigImg);
+    // formData.append("Price", value.Price);
+    formData.append("Description", value.Description);
+    formData.append("Level", value.Level);
+  };
 
   return (
     <LkDashbord>
@@ -37,9 +48,9 @@ const AddVideo = () => {
         setValue={setValue}
       />
       <InputCustom
-        id="link"
-        label="Link"
-        name="Link"
+        id="video"
+        label="Video"
+        name="Video"
         value={value}
         setValue={setValue}
       />

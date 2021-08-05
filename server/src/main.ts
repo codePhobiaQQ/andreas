@@ -4,10 +4,7 @@ import * as cookieParser from 'cookie-parser';
 import * as express from 'express';
 
 async function start() {
-  const app = await NestFactory.create(
-    AppModule,
-    { cors: true },
-  );
+  const app = await NestFactory.create(AppModule, { cors: true });
   app.use(express.urlencoded({ extended: true, limit: '5mb' }));
   app.use(express.json({ limit: '5mb' }));
   app.enableCors({

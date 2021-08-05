@@ -15,7 +15,7 @@ let VideoModule = class VideoModule {
 VideoModule = __decorate([
     common_1.Module({
         controllers: [video_controller_1.VideoController],
-        providers: [video_service_1.VideoService]
+        providers: [video_service_1.VideoService],
     })
 ], VideoModule);
 exports.VideoModule = VideoModule;

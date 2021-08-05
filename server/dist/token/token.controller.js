@@ -26,7 +26,7 @@ let TokenController = class TokenController {
     }
     async refresh(request, response) {
         const { token } = request.cookies;
-        console.log('token', token);
+        console.log('token from cookies', token);
         const { accessToken, refreshToken } = await this.tokenService.refresh(token);
         response.cookie('token', refreshToken, {
             maxAge: 30 * 24 * 60 * 60 * 1000,

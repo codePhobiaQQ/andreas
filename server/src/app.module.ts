@@ -11,7 +11,7 @@ import 'reflect-metadata';
 import { ResponseMiddleware } from './middleware/response.middleware';
 
 @Module({
-  controllers: [VideoController],
+  controllers: [],
   providers: [],
   imports: [
     ConfigModule.forRoot({

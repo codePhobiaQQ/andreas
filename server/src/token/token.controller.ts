@@ -22,7 +22,7 @@ export class TokenController {
     @Res({ passthrough: true }) response: Response,
   ): Promise<any> {
     const { token } = request.cookies;
-    console.log('token', token);
+    console.log('token from cookies', token);
     const { accessToken, refreshToken } = await this.tokenService.refresh(
       token,
     );

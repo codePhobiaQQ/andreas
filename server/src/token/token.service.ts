@@ -72,6 +72,7 @@ export class TokenService {
       const userData = this.jwtService.verify(token, {
         secret: process.env.SECRET_ACCESS_TOEKN,
       });
+      console.log(userData);
       const userToClient = new UserDtoToClient(userData);
       return userToClient;
     } catch (e) {
@@ -97,15 +98,17 @@ export class TokenService {
       if (!isValid) {
         throw new UnauthorizedException('Пользователь не авторизирован');
       }
+      console.log(token);
       const userData = this.jwtService.verify(token, {
         secret: process.env.SECRET_REFRESH_TOEKN,
       });
       const userDataNormal = new GenerateTokenDto(
         userData.id,
         userData.email,
-        userData.roles,
         userData.isActive,
+        userData.roles,
       );
+      console.log('data', userData);
       const { accessToken, refreshToken } = await this.generateToken(
         userDataNormal,
       );

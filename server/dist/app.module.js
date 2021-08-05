@@ -14,7 +14,6 @@ const user_module_1 = require("./user/user.module");
 const auth_module_1 = require("./auth/auth.module");
 const role_module_1 = require("./role/role.module");
 const token_module_1 = require("./token/token.module");
-const video_controller_1 = require("./video/video.controller");
 const video_module_1 = require("./video/video.module");
 require("reflect-metadata");
 const response_middleware_1 = require("./middleware/response.middleware");
@@ -25,7 +24,7 @@ let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
-        controllers: [video_controller_1.VideoController],
+        controllers: [],
         providers: [],
         imports: [
             config_1.ConfigModule.forRoot({
