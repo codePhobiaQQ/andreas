@@ -3,5 +3,5 @@ import { VideoService } from './video.service';
 export declare class VideoController {
     private videoService;
     constructor(videoService: VideoService);
-    addVideo(files: any, videoData: VideoUpploadDto): Promise<number>;
+    addVideo(files: any, videoData: VideoUpploadDto): Promise<import("./video.entity").Video>;
 }

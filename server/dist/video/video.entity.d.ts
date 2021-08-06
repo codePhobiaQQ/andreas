@@ -1,7 +1,7 @@
 import { BaseEntity } from 'typeorm';
 export declare class Video extends BaseEntity {
     id: number;
-    link: string;
+    video: string;
     title: string;
     preview: string;
     bigImg: string;

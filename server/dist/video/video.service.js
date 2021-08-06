@@ -17,18 +17,26 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const video_entity_1 = require("./video.entity");
 const typeorm_2 = require("typeorm");
+const file_service_1 = require("../file/file.service");
 let VideoService = class VideoService {
-    constructor(videoRepository) {
+    constructor(videoRepository, fileService) {
         this.videoRepository = videoRepository;
+        this.fileService = fileService;
     }
     async addVideo(video, bigImg, preview, dto) {
-        return 0;
+        const videoPath = this.fileService.createFile(file_service_1.FileType.VIDEO, video);
+        const bigImgPath = this.fileService.createFile(file_service_1.FileType.IMAGE, bigImg);
+        const previewPath = this.fileService.createFile(file_service_1.FileType.IMAGE, preview);
+        const videoEl = await this.videoRepository.create(Object.assign(Object.assign({}, dto), { video: videoPath, bigImg: bigImgPath, preview: previewPath }));
+        await this.videoRepository.save(videoEl);
+        return videoEl;
     }
 };
 VideoService = __decorate([
     common_1.Injectable(),
     __param(0, typeorm_1.InjectRepository(video_entity_1.Video)),
-    __metadata("design:paramtypes", [typeorm_2.Repository])
+    __metadata("design:paramtypes", [typeorm_2.Repository,
+        file_service_1.FileService])
 ], VideoService);
 exports.VideoService = VideoService;
 //# sourceMappingURL=video.service.js.map

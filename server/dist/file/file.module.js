@@ -6,21 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VideoModule = void 0;
+exports.FileModule = void 0;
 const common_1 = require("@nestjs/common");
-const video_controller_1 = require("./video.controller");
-const video_service_1 = require("./video.service");
-const typeorm_1 = require("@nestjs/typeorm");
-const video_entity_1 = require("./video.entity");
-const file_module_1 = require("../file/file.module");
-let VideoModule = class VideoModule {
+const file_service_1 = require("./file.service");
+let FileModule = class FileModule {
 };
-VideoModule = __decorate([
+FileModule = __decorate([
     common_1.Module({
-        controllers: [video_controller_1.VideoController],
-        providers: [video_service_1.VideoService],
-        imports: [typeorm_1.TypeOrmModule.forFeature([video_entity_1.Video]), file_module_1.FileModule],
+        providers: [file_service_1.FileService],
+        exports: [file_service_1.FileService],
     })
-], VideoModule);
-exports.VideoModule = VideoModule;
-//# sourceMappingURL=video.module.js.map
+], FileModule);
+exports.FileModule = FileModule;
+//# sourceMappingURL=file.module.js.map

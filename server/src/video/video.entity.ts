@@ -6,7 +6,7 @@ export class Video extends BaseEntity {
   id: number;
 
   @Column({ nullable: false })
-  link: string;
+  video: string;
 
   @Column({ nullable: false })
   title: string;

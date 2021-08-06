@@ -20,7 +20,7 @@ __decorate([
 __decorate([
     typeorm_1.Column({ nullable: false }),
     __metadata("design:type", String)
-], Video.prototype, "link", void 0);
+], Video.prototype, "video", void 0);
 __decorate([
     typeorm_1.Column({ nullable: false }),
     __metadata("design:type", String)

@@ -17,6 +17,7 @@ const token_module_1 = require("./token/token.module");
 const video_module_1 = require("./video/video.module");
 require("reflect-metadata");
 const response_middleware_1 = require("./middleware/response.middleware");
+const file_module_1 = require("./file/file.module");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer.apply(response_middleware_1.ResponseMiddleware).forRoutes('/*');
@@ -36,6 +37,7 @@ AppModule = __decorate([
             role_module_1.RoleModule,
             token_module_1.TokenModule,
             video_module_1.VideoModule,
+            file_module_1.FileModule,
         ],
     })
 ], AppModule);

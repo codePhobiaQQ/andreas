@@ -1,8 +1,10 @@
 import { Video } from './video.entity';
 import { Repository } from 'typeorm';
-import { VideoUpploadDto } from "./dto/videoUppload.dto";
+import { VideoUpploadDto } from './dto/videoUppload.dto';
+import { FileService } from '../file/file.service';
 export declare class VideoService {
     private videoRepository;
-    constructor(videoRepository: Repository<Video>);
-    addVideo(video: any, bigImg: any, preview: any, dto: VideoUpploadDto): Promise<number>;
+    private fileService;
+    constructor(videoRepository: Repository<Video>, fileService: FileService);
+    addVideo(video: any, bigImg: any, preview: any, dto: VideoUpploadDto): Promise<Video>;
 }
