@@ -13,13 +13,15 @@ const video_service_1 = require("./video.service");
 const typeorm_1 = require("@nestjs/typeorm");
 const video_entity_1 = require("./video.entity");
 const file_module_1 = require("../file/file.module");
+const user_entity_1 = require("../user/user.entity");
+const token_module_1 = require("../token/token.module");
 let VideoModule = class VideoModule {
 };
 VideoModule = __decorate([
     common_1.Module({
         controllers: [video_controller_1.VideoController],
         providers: [video_service_1.VideoService],
-        imports: [typeorm_1.TypeOrmModule.forFeature([video_entity_1.Video]), file_module_1.FileModule],
+        imports: [typeorm_1.TypeOrmModule.forFeature([video_entity_1.Video, user_entity_1.User]), file_module_1.FileModule, token_module_1.TokenModule],
     })
 ], VideoModule);
 exports.VideoModule = VideoModule;

@@ -12,7 +12,13 @@ export class VideoService {
     private fileService: FileService,
   ) {}
 
-  async addVideo(video, bigImg, preview, dto: VideoUpploadDto): Promise<Video> {
+  async addVideo(
+    video,
+    bigImg,
+    preview,
+    dto: VideoUpploadDto,
+    userId,
+  ): Promise<Video> {
     try {
       const videoPath = this.fileService.createFile(FileType.VIDEO, video);
       const bigImgPath = this.fileService.createFile(FileType.IMAGE, bigImg);
@@ -22,6 +28,7 @@ export class VideoService {
         video: videoPath,
         bigImg: bigImgPath,
         preview: previewPath,
+        user: userId,
       });
       await this.videoRepository.save(videoEl);
       return videoEl;

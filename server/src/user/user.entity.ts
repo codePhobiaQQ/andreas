@@ -5,10 +5,12 @@ import {
   Entity,
   JoinTable,
   ManyToMany,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Role } from '../role/role.entity';
+import { Video } from '../video/video.entity';
 
 @Entity()
 export class User extends BaseEntity {
@@ -43,4 +45,10 @@ export class User extends BaseEntity {
   @OneToOne(() => Token)
   @JoinTable()
   token: Token;
+
+  @OneToMany('Video', (video: Video) => video.user, {
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
+  })
+  videos: Video[];
 }

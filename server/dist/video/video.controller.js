@@ -18,14 +18,18 @@ const common_2 = require("@nestjs/common");
 const multer_1 = require("@nestjs/platform-express/multer");
 const videoUppload_dto_1 = require("./dto/videoUppload.dto");
 const video_service_1 = require("./video.service");
+const token_service_1 = require("../token/token.service");
 let VideoController = class VideoController {
-    constructor(videoService) {
+    constructor(videoService, tokenService) {
         this.videoService = videoService;
+        this.tokenService = tokenService;
     }
-    addVideo(files, videoData) {
+    async addVideo(files, videoData, request, response) {
+        const user = await this.tokenService.validateAccessToken(request.headers.authorization.split(' ')[1]);
+        const userId = user.id;
         const { video, bigImg, preview } = files;
-        const afterAddVideo = this.videoService.addVideo(video[0], bigImg[0], preview[0], videoData);
-        return afterAddVideo;
+        const afterAddVideo = await this.videoService.addVideo(video[0], bigImg[0], preview[0], videoData, userId);
+        return response.json(afterAddVideo);
     }
 };
 __decorate([
@@ -37,13 +41,16 @@ __decorate([
     ])),
     __param(0, common_1.UploadedFiles()),
     __param(1, common_1.Body()),
+    __param(2, common_1.Req()),
+    __param(3, common_1.Res()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object, videoUppload_dto_1.VideoUpploadDto]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:paramtypes", [Object, videoUppload_dto_1.VideoUpploadDto, Object, Object]),
+    __metadata("design:returntype", Promise)
 ], VideoController.prototype, "addVideo", null);
 VideoController = __decorate([
     common_2.Controller('video'),
-    __metadata("design:paramtypes", [video_service_1.VideoService])
+    __metadata("design:paramtypes", [video_service_1.VideoService,
+        token_service_1.TokenService])
 ], VideoController);
 exports.VideoController = VideoController;
 //# sourceMappingURL=video.controller.js.map

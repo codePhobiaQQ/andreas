@@ -6,5 +6,5 @@ export declare class VideoService {
     private videoRepository;
     private fileService;
     constructor(videoRepository: Repository<Video>, fileService: FileService);
-    addVideo(video: any, bigImg: any, preview: any, dto: VideoUpploadDto): Promise<Video>;
+    addVideo(video: any, bigImg: any, preview: any, dto: VideoUpploadDto, userId: any): Promise<Video>;
 }

@@ -1,12 +1,24 @@
-import { Body, Post, UploadedFiles, UseInterceptors } from '@nestjs/common';
+import {
+  Body,
+  Post,
+  Req,
+  Res,
+  UploadedFiles,
+  UseInterceptors,
+} from '@nestjs/common';
+import { Response, Request } from 'express';
 import { Controller } from '@nestjs/common';
 import { FileFieldsInterceptor } from '@nestjs/platform-express/multer';
 import { VideoUpploadDto } from './dto/videoUppload.dto';
 import { VideoService } from './video.service';
+import { TokenService } from '../token/token.service';
 
 @Controller('video')
 export class VideoController {
-  constructor(private videoService: VideoService) {}
+  constructor(
+    private videoService: VideoService,
+    private tokenService: TokenService,
+  ) {}
 
   @Post('add')
   @UseInterceptors(
@@ -16,14 +28,25 @@ export class VideoController {
       { name: 'preview', maxCount: 1 },
     ]),
   )
-  addVideo(@UploadedFiles() files, @Body() videoData: VideoUpploadDto) {
+  async addVideo(
+    @UploadedFiles() files,
+    @Body() videoData: VideoUpploadDto,
+    @Req() request: Request,
+    @Res() response: Response,
+  ) {
+    const user = await this.tokenService.validateAccessToken(
+      request.headers.authorization.split(' ')[1],
+    );
+    const userId = user.id;
     const { video, bigImg, preview } = files;
-    const afterAddVideo = this.videoService.addVideo(
+    const afterAddVideo = await this.videoService.addVideo(
       video[0],
       bigImg[0],
       preview[0],
       videoData,
+      userId,
     );
-    return afterAddVideo;
+    return response.json(afterAddVideo);
+    // return afterAddVideo;
   }
 }

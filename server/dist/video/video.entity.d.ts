@@ -1,3 +1,4 @@
+import { User } from 'src/user/user.entity';
 import { BaseEntity } from 'typeorm';
 export declare class Video extends BaseEntity {
     id: number;
@@ -9,4 +10,5 @@ export declare class Video extends BaseEntity {
     category: string;
     description: string;
     level: string;
+    user: User;
 }

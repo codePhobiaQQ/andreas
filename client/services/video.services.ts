@@ -1,9 +1,8 @@
 import $api from "../http";
 import { AxiosResponse } from "axios";
-import { IUser } from "../models/IUser";
 
 export default class VideoServices {
-  static async addVideo(data: any): Promise<any> {
+  static async addVideo(data: any): Promise<AxiosResponse<any>> {
     try {
       const response = await $api.post("/video/add", data);
       return response;

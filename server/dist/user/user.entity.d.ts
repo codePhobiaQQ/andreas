@@ -1,6 +1,7 @@
 import { Token } from 'src/token/token.entity';
 import { BaseEntity } from 'typeorm';
 import { Role } from '../role/role.entity';
+import { Video } from '../video/video.entity';
 export declare class User extends BaseEntity {
     id: number;
     email: string;
@@ -12,4 +13,5 @@ export declare class User extends BaseEntity {
     isActive: boolean;
     roles: Role[];
     token: Token;
+    videos: Video[];
 }

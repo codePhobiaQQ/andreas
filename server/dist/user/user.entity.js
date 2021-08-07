@@ -57,6 +57,13 @@ __decorate([
     typeorm_1.JoinTable(),
     __metadata("design:type", token_entity_1.Token)
 ], User.prototype, "token", void 0);
+__decorate([
+    typeorm_1.OneToMany('Video', (video) => video.user, {
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+    }),
+    __metadata("design:type", Array)
+], User.prototype, "videos", void 0);
 User = __decorate([
     typeorm_1.Entity()
 ], User);

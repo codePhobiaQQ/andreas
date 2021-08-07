@@ -23,12 +23,12 @@ let VideoService = class VideoService {
         this.videoRepository = videoRepository;
         this.fileService = fileService;
     }
-    async addVideo(video, bigImg, preview, dto) {
+    async addVideo(video, bigImg, preview, dto, userId) {
         try {
             const videoPath = this.fileService.createFile(file_service_1.FileType.VIDEO, video);
             const bigImgPath = this.fileService.createFile(file_service_1.FileType.IMAGE, bigImg);
             const previewPath = this.fileService.createFile(file_service_1.FileType.IMAGE, preview);
-            const videoEl = await this.videoRepository.create(Object.assign(Object.assign({}, dto), { video: videoPath, bigImg: bigImgPath, preview: previewPath }));
+            const videoEl = await this.videoRepository.create(Object.assign(Object.assign({}, dto), { video: videoPath, bigImg: bigImgPath, preview: previewPath, user: userId }));
             await this.videoRepository.save(videoEl);
             return videoEl;
         }

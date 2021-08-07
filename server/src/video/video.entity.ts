@@ -1,4 +1,12 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from 'src/user/user.entity';
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
 export class Video extends BaseEntity {
@@ -28,4 +36,8 @@ export class Video extends BaseEntity {
 
   @Column({ nullable: true })
   level: string;
+
+  @ManyToOne(() => User, (user) => user.videos)
+  @JoinColumn({ name: 'user_id' })
+  user: User;
 }
