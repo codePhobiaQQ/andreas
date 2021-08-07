@@ -20,6 +20,9 @@ export class Video extends BaseEntity {
   @Column({ nullable: false })
   price: number;
 
+  @Column({ nullable: false })
+  category: string;
+
   @Column({ nullable: true })
   description: string;
 

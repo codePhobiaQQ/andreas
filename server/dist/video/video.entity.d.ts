@@ -6,6 +6,7 @@ export declare class Video extends BaseEntity {
     preview: string;
     bigImg: string;
     price: number;
+    category: string;
     description: string;
     level: string;
 }

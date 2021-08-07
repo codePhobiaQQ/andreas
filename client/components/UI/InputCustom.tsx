@@ -1,21 +1,19 @@
 import React, { useState } from "react";
-import { AddVideoI } from "../../pages/add-video";
 
 interface InputProps {
   label?: string;
   id: string;
   value: any;
-  setValue: React.Dispatch<React.SetStateAction<any>>;
-  name: string;
+  onChange: any;
 }
 
-const InputCustom = ({ name, label, id, value, setValue }: InputProps) => {
+const InputCustom = ({ label, id, value, onChange }: InputProps) => {
   return (
     <div>
       <label htmlFor={id}>{label}: </label>
       <input
-        value={value[name]}
-        onChange={(e) => setValue({ ...value, [name]: e.target.value })}
+        value={value}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e)}
         type="text"
         id={id}
       />

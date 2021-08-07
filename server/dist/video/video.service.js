@@ -24,12 +24,17 @@ let VideoService = class VideoService {
         this.fileService = fileService;
     }
     async addVideo(video, bigImg, preview, dto) {
-        const videoPath = this.fileService.createFile(file_service_1.FileType.VIDEO, video);
-        const bigImgPath = this.fileService.createFile(file_service_1.FileType.IMAGE, bigImg);
-        const previewPath = this.fileService.createFile(file_service_1.FileType.IMAGE, preview);
-        const videoEl = await this.videoRepository.create(Object.assign(Object.assign({}, dto), { video: videoPath, bigImg: bigImgPath, preview: previewPath }));
-        await this.videoRepository.save(videoEl);
-        return videoEl;
+        try {
+            const videoPath = this.fileService.createFile(file_service_1.FileType.VIDEO, video);
+            const bigImgPath = this.fileService.createFile(file_service_1.FileType.IMAGE, bigImg);
+            const previewPath = this.fileService.createFile(file_service_1.FileType.IMAGE, preview);
+            const videoEl = await this.videoRepository.create(Object.assign(Object.assign({}, dto), { video: videoPath, bigImg: bigImgPath, preview: previewPath }));
+            await this.videoRepository.save(videoEl);
+            return videoEl;
+        }
+        catch (e) {
+            throw new common_1.HttpException(e.message, common_1.HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 };
 VideoService = __decorate([

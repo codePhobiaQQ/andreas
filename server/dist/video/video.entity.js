@@ -38,6 +38,10 @@ __decorate([
     __metadata("design:type", Number)
 ], Video.prototype, "price", void 0);
 __decorate([
+    typeorm_1.Column({ nullable: false }),
+    __metadata("design:type", String)
+], Video.prototype, "category", void 0);
+__decorate([
     typeorm_1.Column({ nullable: true }),
     __metadata("design:type", String)
 ], Video.prototype, "description", void 0);
