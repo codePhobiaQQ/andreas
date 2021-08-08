@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
 import LkDashbord from "../hoc/LkDashbord";
-import PersonData from "../components/PersonData";
 import LkHeaderContent from "../hoc/LkHeaderContent";
 import Image from "next/image";
 import bgImg from "../public/assets/img/cartBg.png";
 import { GetServerSideProps, GetStaticProps, NextPage } from "next";
-import { ParsedUrlQuery } from "querystring";
-import { useDispatch } from "react-redux";
+import VideoServices from "../services/video.services";
 
-const Home: NextPage<any> = (props) => {
-  useEffect(() => {
-    console.log(props);
-  });
-
+const Home: NextPage<any> = ({ videos, children }) => {
   const [activeFilter, setActiveFilter] = useState(1);
+
+  useEffect(() => {
+    console.log(typeof videos);
+    console.log(videos);
+  });
 
   const cards = [
     {
@@ -35,30 +34,30 @@ const Home: NextPage<any> = (props) => {
     <LkDashbord>
       <LkHeaderContent />
       <div className="contentData">
-        {cards.map((card, key) => (
-          <div className="card" key={key}>
-            <Image src={card.imgSrc} width={268} height={409} alt="cart" />
-          </div>
-        ))}
+        {/*{videos.map((card, key) => (*/}
+        {/*  <div className="card" key={key}>*/}
+        {/*    <Image src={card.imgSrc} width={268} height={409} alt="cart" />*/}
+        {/*  </div>*/}
+        {/*))}*/}
       </div>
     </LkDashbord>
   );
 };
 
 // export const getServerSideProps: GetServerSideProps = async (context) => {
-//   console.log(context.resolvedUrl)
+//   const videos = await VideoServices.getAll();
 //   return {
-//     props: {context: {text: "ahaha"}}, // will be passed to the page component as props
-//   }
-// }
+//     props: { videos }, // will be passed to the page component as props
+//   };
+// };
 
-// // @ts-ignore
-// export const getInitialProps = async (ctx) => {
-//   console.log('ctx', ctx)
-//   return {
-//     lol: "lol"
-//   }
-// }
+export const getStaticProps: GetStaticProps = async (context) => {
+  const videos = await VideoServices.getAll();
+  const final = JSON.parse(JSON.stringify(videos));
+  return {
+    props: { videos: final },
+  };
+};
 
 // export const getStaticProps: GetStaticProps = async (context) => {
 //   // Call an external API endpoint to get posts.

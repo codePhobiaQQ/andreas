@@ -7,4 +7,5 @@ export declare class VideoController {
     private tokenService;
     constructor(videoService: VideoService, tokenService: TokenService);
     addVideo(files: any, videoData: VideoUpploadDto, request: Request, response: Response): Promise<Response<any, Record<string, any>>>;
+    getAllVideo(): Promise<import("./video.entity").Video[]>;
 }

@@ -7,11 +7,6 @@ const API_URL = `http://localhost:5000/`;
 
 const $api = axios.create({
   withCredentials: true,
-  // headers: {
-  //   "Access-Control-Allow-Origin": "http://localhost:5000",
-  //   "Access-Control-Allow-Credentials": "true",
-  //   "Access-Control-Allow-Methods": "*",
-  // },
   baseURL: API_URL,
 });
 
@@ -37,7 +32,6 @@ $api.interceptors.response.use(
           withCredentials: true,
         });
         localStorage.setItem("token", response.data.accessToken);
-        console.log("response", response);
         return $api.request(originalRequest);
       } catch (e) {
         console.log(e);

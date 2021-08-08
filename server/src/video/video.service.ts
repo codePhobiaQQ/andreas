@@ -1,4 +1,4 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable, Res } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Video } from './video.entity';
 import { Repository } from 'typeorm';
@@ -32,6 +32,16 @@ export class VideoService {
       });
       await this.videoRepository.save(videoEl);
       return videoEl;
+    } catch (e) {
+      throw new HttpException(e.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
+
+  async getAll(): Promise<Video[]> {
+    try {
+      // const videos = await this.videoRepository.find({ relations: ['user'] });
+      const videos = await this.videoRepository.find();
+      return videos;
     } catch (e) {
       throw new HttpException(e.message, HttpStatus.INTERNAL_SERVER_ERROR);
     }

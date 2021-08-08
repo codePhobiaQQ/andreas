@@ -36,6 +36,15 @@ let VideoService = class VideoService {
             throw new common_1.HttpException(e.message, common_1.HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    async getAll() {
+        try {
+            const videos = await this.videoRepository.find();
+            return videos;
+        }
+        catch (e) {
+            throw new common_1.HttpException(e.message, common_1.HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 };
 VideoService = __decorate([
     common_1.Injectable(),

@@ -1,5 +1,5 @@
 import {
-  Body,
+  Body, Get,
   Post,
   Req,
   Res,
@@ -47,6 +47,10 @@ export class VideoController {
       userId,
     );
     return response.json(afterAddVideo);
-    // return afterAddVideo;
+  }
+
+  @Get('get-all')
+  getAllVideo() {
+    return this.videoService.getAll();
   }
 }

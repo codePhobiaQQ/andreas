@@ -31,6 +31,9 @@ let VideoController = class VideoController {
         const afterAddVideo = await this.videoService.addVideo(video[0], bigImg[0], preview[0], videoData, userId);
         return response.json(afterAddVideo);
     }
+    getAllVideo() {
+        return this.videoService.getAll();
+    }
 };
 __decorate([
     common_1.Post('add'),
@@ -47,6 +50,12 @@ __decorate([
     __metadata("design:paramtypes", [Object, videoUppload_dto_1.VideoUpploadDto, Object, Object]),
     __metadata("design:returntype", Promise)
 ], VideoController.prototype, "addVideo", null);
+__decorate([
+    common_1.Get('get-all'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], VideoController.prototype, "getAllVideo", null);
 VideoController = __decorate([
     common_2.Controller('video'),
     __metadata("design:paramtypes", [video_service_1.VideoService,
