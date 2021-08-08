@@ -9,8 +9,8 @@ import { VideoModule } from './video/video.module';
 import 'reflect-metadata';
 import { ResponseMiddleware } from './middleware/response.middleware';
 import { FileModule } from './file/file.module';
-// import { APP_GUARD } from '@nestjs/core';
-// import { JwtAuthGuard } from './auth/jwt-auth.guard';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import * as path from 'path';
 
 @Module({
   controllers: [],
@@ -24,6 +24,7 @@ import { FileModule } from './file/file.module';
     ConfigModule.forRoot({
       envFilePath: `.${process.env.NODE_ENV}.env`,
     }),
+    ServeStaticModule.forRoot({ rootPath: path.resolve(__dirname, 'static') }),
     TypeOrmModule.forRoot(),
     UserModule,
     AuthModule,

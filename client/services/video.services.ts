@@ -1,7 +1,6 @@
 import $api from "../http";
 import axios, { AxiosResponse } from "axios";
 import { IVideo } from "../models/IVideo";
-import {log} from "util";
 
 export default class VideoServices {
   static async addVideo(data: any): Promise<AxiosResponse<IVideo>> {
@@ -17,7 +16,6 @@ export default class VideoServices {
     try {
       const response = await axios.get("http://localhost:5000/video/get-all");
       const videos = response.data;
-      console.log(videos);
       return videos;
     } catch (e) {
       console.log(e.message);
