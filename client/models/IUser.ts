@@ -1,8 +1,8 @@
-import {Role} from "../../server/src/role/role.entity";
+import IRole from "./IRole";
 
 export interface IUser {
   email: string;
   isActivated: boolean;
-  roles: Role[];
+  roles: IRole[];
   id: string;
 }

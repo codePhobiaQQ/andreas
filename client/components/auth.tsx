@@ -81,13 +81,6 @@ const Auth = (props: IAuth) => {
       />
       <div className="auth__content">
         <h3>Your text, Andy!</h3>
-        <button
-          onClick={() => {
-            dispatch(fetchWeaponsThunk());
-          }}
-        >
-          test
-        </button>
         <p>
           Write us whatever you want. We will answer to you as fast as possible.
         </p>
