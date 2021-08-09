@@ -28,7 +28,7 @@ export default function Home() {
             <p>
               A Balboa haven filled with moves and footwork, practice videos and
               tools for solo dancers, couples, practice groups and teachers
-              brought to you by top class Balboa dancers.
+              brought to you by top class Balboa dancers1.
             </p>
             <div className="buttonsWrapper">
               <button className="blueButton">Try for free</button>

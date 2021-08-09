@@ -25,9 +25,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9634fc3f-2239-444f-a873-094217e759fc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,6 +65,9 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/client/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/pages/home" />
       <recent name="$PROJECT_DIR$/client/styles" />
@@ -74,7 +76,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build (1)">
+  <component name="RunManager" selected="npm.start:dev">
     <configuration name="build (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/server/package.json" />
       <command value="run" />
@@ -127,9 +129,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start:dev" />
         <item itemvalue="npm.build (1)" />
         <item itemvalue="npm.build" />
-        <item itemvalue="npm.start:dev" />
         <item itemvalue="npm.dev (1)" />
         <item itemvalue="npm.dev" />
       </list>
@@ -157,7 +159,7 @@
       <workItem from="1627066468099" duration="61000" />
       <workItem from="1627775605148" duration="60976000" />
       <workItem from="1628445413039" duration="212000" />
-      <workItem from="1628445846487" duration="2445000" />
+      <workItem from="1628445846487" duration="5888000" />
     </task>
     <servers />
   </component>
@@ -194,28 +196,28 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="375" y="232" key="EditFileWatcherDialog/0.0.1440.900@0.0.1440.900" timestamp="1626356848369" />
-    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1628448095988">
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1628508806252">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1628448095988" />
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1628508806252" />
     <state width="1899" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1628090321037" />
     <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.25.1440.783@0.25.1440.783" timestamp="1626502872954" />
-    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1628448095986">
+    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1628508806250">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1628448095986" />
+    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1628508806250" />
     <state width="1899" height="305" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1628090321036" />
     <state width="1419" height="245" key="GridCell.Tab.0.center/0.25.1440.783@0.25.1440.783" timestamp="1626502872947" />
-    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1628448095983">
+    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1628508806249">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1628448095983" />
+    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1628508806249" />
     <state width="1899" height="305" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1628090321035" />
     <state width="1419" height="245" key="GridCell.Tab.0.left/0.25.1440.783@0.25.1440.783" timestamp="1626502872940" />
-    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1628448095987">
+    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1628508806251">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1628448095987" />
+    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1628508806251" />
     <state width="1899" height="305" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1628090321036" />
     <state width="1419" height="245" key="GridCell.Tab.0.right/0.25.1440.783@0.25.1440.783" timestamp="1626502872952" />
     <state x="469" y="179" key="SettingsEditor" timestamp="1627979926304">
