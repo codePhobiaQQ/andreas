@@ -24,6 +24,14 @@ let RoleController = class RoleController {
         const role = this.roleService.create(roleDto);
         return role;
     }
+    add(value, id) {
+        const user = this.roleService.add(value, id);
+        return user;
+    }
+    shaw(name) {
+        const role = this.roleService.getByValue1(name);
+        return role;
+    }
 };
 __decorate([
     common_1.Post('create'),
@@ -32,6 +40,20 @@ __decorate([
     __metadata("design:paramtypes", [create_role_dto_1.CreateRoleDto]),
     __metadata("design:returntype", Promise)
 ], RoleController.prototype, "create", null);
+__decorate([
+    common_1.Post('add'),
+    __param(0, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Number]),
+    __metadata("design:returntype", Promise)
+], RoleController.prototype, "add", null);
+__decorate([
+    common_1.Post('shaw'),
+    __param(0, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], RoleController.prototype, "shaw", null);
 RoleController = __decorate([
     common_1.Controller('role'),
     __metadata("design:paramtypes", [role_service_1.RoleService])

@@ -19,6 +19,8 @@ const multer_1 = require("@nestjs/platform-express/multer");
 const videoUppload_dto_1 = require("./dto/videoUppload.dto");
 const video_service_1 = require("./video.service");
 const token_service_1 = require("../token/token.service");
+const role_guard_1 = require("../role/role.guard");
+const role_decorator_1 = require("../role/role.decorator");
 let VideoController = class VideoController {
     constructor(videoService, tokenService) {
         this.videoService = videoService;
@@ -37,6 +39,7 @@ let VideoController = class VideoController {
 };
 __decorate([
     common_1.Post('add'),
+    role_decorator_1.Role(['admin, creator']),
     common_1.UseInterceptors(multer_1.FileFieldsInterceptor([
         { name: 'video', maxCount: 1 },
         { name: 'bigImg', maxCount: 1 },
@@ -52,12 +55,14 @@ __decorate([
 ], VideoController.prototype, "addVideo", null);
 __decorate([
     common_1.Get('get-all'),
+    role_decorator_1.Role(['user, admin, creator']),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], VideoController.prototype, "getAllVideo", null);
 VideoController = __decorate([
     common_2.Controller('video'),
+    common_1.UseGuards(role_guard_1.RoleGuard),
     __metadata("design:paramtypes", [video_service_1.VideoService,
         token_service_1.TokenService])
 ], VideoController);

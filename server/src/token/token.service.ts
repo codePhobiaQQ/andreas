@@ -67,12 +67,11 @@ export class TokenService {
     }
   }
 
-  async validateAccessToken(token: string): Promise<UserDtoToClient> {
+  validateAccessToken(token: string): UserDtoToClient {
     try {
       const userData = this.jwtService.verify(token, {
         secret: process.env.SECRET_ACCESS_TOEKN,
       });
-      console.log(userData);
       const userToClient = new UserDtoToClient(userData);
       return userToClient;
     } catch (e) {
@@ -80,7 +79,7 @@ export class TokenService {
     }
   }
 
-  async validateRefreshToken(token: string) {
+  validateRefreshToken(token: string) {
     try {
       const userData = this.jwtService.verify(token, {
         secret: process.env.SECRET_REFRESH_TOEKN,

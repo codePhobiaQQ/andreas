@@ -18,9 +18,11 @@ const typeorm_1 = require("@nestjs/typeorm");
 const role_entity_1 = require("./role.entity");
 const typeorm_2 = require("typeorm");
 const user_service_1 = require("../user/user.service");
+const user_entity_1 = require("../user/user.entity");
 let RoleService = class RoleService {
-    constructor(roleRepository, userService) {
+    constructor(roleRepository, userRepository, userService) {
         this.roleRepository = roleRepository;
+        this.userRepository = userRepository;
         this.userService = userService;
     }
     async create(roleDto) {
@@ -32,14 +34,54 @@ let RoleService = class RoleService {
         return role;
     }
     async getByValue(value) {
-        const role = this.roleRepository.findOne({ where: { name: value } });
-        return role;
+        try {
+            const role = await this.roleRepository.findOne({
+                where: { name: value },
+            });
+            console.log('role', role);
+            return role;
+        }
+        catch (e) {
+            console.log(e);
+            throw new common_1.HttpException(e.message, common_1.HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    async getByValue1(name) {
+        try {
+            const role = await this.roleRepository.find({
+                where: { name: name },
+            });
+            console.log('role', role);
+            return role;
+        }
+        catch (e) {
+            console.log(e);
+            throw new common_1.HttpException(e.message, common_1.HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    async add(value, id) {
+        try {
+            const role = await this.getByValue(value);
+            console.log('role', role);
+            const user = await this.userService.getUserById(id);
+            console.log('user', user);
+            if (!user.roles.includes(role)) {
+                user.roles.push(role);
+            }
+            return user;
+        }
+        catch (e) {
+            console.log(e);
+            throw new common_1.HttpException(e.message, common_1.HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 };
 RoleService = __decorate([
     common_1.Injectable(),
     __param(0, typeorm_1.InjectRepository(role_entity_1.Role)),
+    __param(1, typeorm_1.InjectRepository(user_entity_1.User)),
     __metadata("design:paramtypes", [typeorm_2.Repository,
+        typeorm_2.Repository,
         user_service_1.UserService])
 ], RoleService);
 exports.RoleService = RoleService;

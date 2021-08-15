@@ -39,7 +39,6 @@ export class VideoService {
 
   async getAll(): Promise<Video[]> {
     try {
-      // const videos = await this.videoRepository.find({ relations: ['user'] });
       const videos = await this.videoRepository.find();
       return videos;
     } catch (e) {

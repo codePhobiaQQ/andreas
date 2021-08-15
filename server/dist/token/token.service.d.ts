@@ -15,8 +15,8 @@ export declare class TokenService {
     generateToken(generateTokenDto: GenerateTokenDto): Promise<ITokens>;
     saveToken(tokenDto: TokenDto): Promise<Token>;
     deleteToken(token: string): Promise<DeleteResult>;
-    validateAccessToken(token: string): Promise<UserDtoToClient>;
-    validateRefreshToken(token: string): Promise<any>;
+    validateAccessToken(token: string): UserDtoToClient;
+    validateRefreshToken(token: string): any;
     refresh(token: string): Promise<ITokens>;
     findToken(refreshToken: string): Promise<Token>;
 }

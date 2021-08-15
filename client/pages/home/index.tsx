@@ -19,20 +19,20 @@ const Index: NextPage<HomeProps> = ({ videos }) => {
   return (
     <LkDashbord>
       <LkHeaderContent />
-      {/*<div className="contentData">*/}
-      {/*  {videos.map((card, key) => (*/}
-      {/*    <Card key={key} card={card} />*/}
-      {/*  ))}*/}
-      {/*</div>*/}
+      <div className="contentData">
+        {videos?.map((card, key) => (
+          <Card key={key} card={card} />
+        ))}
+      </div>
     </LkDashbord>
   );
 };
 
-// export const getStaticProps: GetStaticProps = async (context) => {
-//   const videos: IVideo[] = await VideoServices.getAll();
-//   return {
-//     props: { videos },
-//   };
-// };
+export const getStaticProps: GetStaticProps = async (context) => {
+  const videos: IVideo[] = await VideoServices.getAll();
+  return {
+    props: { videos },
+  };
+};
 
 export default Index;

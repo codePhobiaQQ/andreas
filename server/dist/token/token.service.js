@@ -67,12 +67,11 @@ let TokenService = class TokenService {
             throw new common_1.UnauthorizedException('Пользователь не авторизирован');
         }
     }
-    async validateAccessToken(token) {
+    validateAccessToken(token) {
         try {
             const userData = this.jwtService.verify(token, {
                 secret: process.env.SECRET_ACCESS_TOEKN,
             });
-            console.log(userData);
             const userToClient = new login_user_dto_1.UserDtoToClient(userData);
             return userToClient;
         }
@@ -80,7 +79,7 @@ let TokenService = class TokenService {
             throw new common_1.UnauthorizedException('Пользователь не авторизирован');
         }
     }
-    async validateRefreshToken(token) {
+    validateRefreshToken(token) {
         try {
             const userData = this.jwtService.verify(token, {
                 secret: process.env.SECRET_REFRESH_TOEKN,

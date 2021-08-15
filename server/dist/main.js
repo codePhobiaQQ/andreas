@@ -9,7 +9,7 @@ async function start() {
     app.use(express.urlencoded({ extended: true, limit: '5mb' }));
     app.use(express.json({ limit: '5mb' }));
     app.enableCors({
-        origin: 'http://localhost:3000',
+        origin: ['http://localhost:3000', 'https://testing.nikitin-sergei.ru'],
         credentials: true,
     });
     app.use(cookieParser());
