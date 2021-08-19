@@ -15,14 +15,8 @@ export class RoleController {
   }
 
   @Post('add')
-  add(@Body() value: string, id: number): Promise<User> {
-    const user = this.roleService.add(value, id);
+  add(@Body() data: { userId: number }): Promise<User> {
+    const user = this.roleService.add(data.userId);
     return user;
-  }
-
-  @Post('shaw')
-  shaw(@Body() name: string): Promise<any> {
-    const role = this.roleService.getByValue1(name);
-    return role;
   }
 }

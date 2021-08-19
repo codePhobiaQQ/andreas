@@ -6,6 +6,7 @@ export declare class RoleController {
     private roleService;
     constructor(roleService: RoleService);
     create(roleDto: CreateRoleDto): Promise<Role>;
-    add(value: string, id: number): Promise<User>;
-    shaw(name: string): Promise<any>;
+    add(data: {
+        userId: number;
+    }): Promise<User>;
 }

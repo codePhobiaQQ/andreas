@@ -4,7 +4,6 @@ import { AuthService } from './auth.service';
 import { User } from '../user/user.entity';
 import { TokenService } from '../token/token.service';
 import { Request, Response } from 'express';
-import { ReturnLoginDto } from './dto/login-user.dto';
 
 interface IRegister {
   user: User;
@@ -30,7 +29,6 @@ export class AuthController {
       httpOnly: true,
     });
     return response.json(user);
-    // return user;
   }
 
   @Post('login')

@@ -46,28 +46,20 @@ let RoleService = class RoleService {
             throw new common_1.HttpException(e.message, common_1.HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    async getByValue1(name) {
+    async add(userId) {
         try {
-            const role = await this.roleRepository.find({
-                where: { name: name },
+            const role = await this.getByValue('admin');
+            const user = await this.userService.getUserById(userId);
+            let userHasRole = 0;
+            user.roles.map((userRole) => {
+                if (JSON.stringify(userRole) === JSON.stringify(role)) {
+                    userHasRole = 1;
+                }
             });
-            console.log('role', role);
-            return role;
-        }
-        catch (e) {
-            console.log(e);
-            throw new common_1.HttpException(e.message, common_1.HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-    async add(value, id) {
-        try {
-            const role = await this.getByValue(value);
-            console.log('role', role);
-            const user = await this.userService.getUserById(id);
-            console.log('user', user);
-            if (!user.roles.includes(role)) {
+            if (!userHasRole) {
                 user.roles.push(role);
             }
+            await this.userRepository.save(user);
             return user;
         }
         catch (e) {

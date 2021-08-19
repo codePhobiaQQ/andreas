@@ -10,22 +10,18 @@ import 'reflect-metadata';
 import { ResponseMiddleware } from './middleware/response.middleware';
 import { FileModule } from './file/file.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import OrmConfig from './ormconfig';
 import * as path from 'path';
 
 @Module({
   controllers: [],
-  providers: [
-    // {
-    //   provide: APP_GUARD,
-    //   useClass: JwtAuthGuard,
-    // },
-  ],
+  providers: [],
   imports: [
+    // ServeStaticModule.forRoot({ rootPath: path.resolve(__dirname, 'static') }),
     ConfigModule.forRoot({
       envFilePath: `.${process.env.NODE_ENV}.env`,
     }),
-    ServeStaticModule.forRoot({ rootPath: path.resolve(__dirname, 'static') }),
-    TypeOrmModule.forRoot(),
+    TypeOrmModule.forRoot(OrmConfig),
     UserModule,
     AuthModule,
     RoleModule,

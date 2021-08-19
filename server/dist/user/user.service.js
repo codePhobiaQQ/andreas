@@ -46,7 +46,10 @@ let UserService = class UserService {
         return users;
     }
     async getUserById(id) {
-        const user = await this.usersRepository.findOne({ where: { id: id } });
+        const user = await this.usersRepository.findOne({
+            where: { id: id },
+            relations: ['roles'],
+        });
         return user;
     }
 };

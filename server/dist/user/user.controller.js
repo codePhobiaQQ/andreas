@@ -23,6 +23,7 @@ let UserController = class UserController {
         return this.userService.viewAll();
     }
     getById(id) {
+        console.log(typeof id);
         return this.userService.getUserById(id);
     }
 };

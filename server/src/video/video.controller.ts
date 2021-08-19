@@ -26,7 +26,7 @@ export class VideoController {
   ) {}
 
   @Post('add')
-  @Role(['admin, creator'])
+  @Role(['admin', 'creator'])
   @UseInterceptors(
     FileFieldsInterceptor([
       { name: 'video', maxCount: 1 },
@@ -56,7 +56,7 @@ export class VideoController {
   }
 
   @Get('get-all')
-  @Role(['user, admin, creator'])
+  @Role(['user', 'admin', 'creator'])
   getAllVideo() {
     return this.videoService.getAll();
   }

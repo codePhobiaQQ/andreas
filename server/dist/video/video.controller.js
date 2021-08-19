@@ -39,7 +39,7 @@ let VideoController = class VideoController {
 };
 __decorate([
     common_1.Post('add'),
-    role_decorator_1.Role(['admin, creator']),
+    role_decorator_1.Role(['admin', 'creator']),
     common_1.UseInterceptors(multer_1.FileFieldsInterceptor([
         { name: 'video', maxCount: 1 },
         { name: 'bigImg', maxCount: 1 },
@@ -55,7 +55,7 @@ __decorate([
 ], VideoController.prototype, "addVideo", null);
 __decorate([
     common_1.Get('get-all'),
-    role_decorator_1.Role(['user, admin, creator']),
+    role_decorator_1.Role(['user', 'admin', 'creator']),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)

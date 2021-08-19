@@ -7,13 +7,13 @@ export class UserController {
   constructor(private userService: UserService) {}
 
   @Get('all-users')
-  // @UseGuards(JwtAuthGuard)
   viewAll(): Promise<User[]> {
     return this.userService.viewAll();
   }
 
   @Get('get-by-id/:id')
   getById(@Param() id: number): Promise<User> {
+    console.log(typeof id);
     return this.userService.getUserById(id);
   }
 }
