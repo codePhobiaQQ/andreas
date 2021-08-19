@@ -10,7 +10,7 @@ exports.ResponseMiddleware = void 0;
 const common_1 = require("@nestjs/common");
 let ResponseMiddleware = class ResponseMiddleware {
     use(request, response, next) {
-        response.header('Access-Control-Allow-Origin', 'https://testing.nikitin-sergei.ru');
+        response.header('Access-Control-Allow-Origin', 'http://localhost:3000');
         response.header('Access-Control-Allow-Credentials', 'true');
         response.header('Access-Control-Allow-Methods', '*');
         next();
