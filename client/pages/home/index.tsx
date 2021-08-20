@@ -6,6 +6,7 @@ import VideoServices from "../../services/video.services";
 import { IVideo } from "../../models/IVideo";
 import Card from "../../components/Card";
 import processHTML from "next/dist/next-server/lib/post-process";
+import axios from "axios";
 
 interface HomeProps {
   videos?: IVideo[];
@@ -13,6 +14,14 @@ interface HomeProps {
 
 const Index: NextPage<HomeProps> = ({ videos }) => {
   const [activeFilter, setActiveFilter] = useState(1);
+
+  useEffect(() => {
+    (async () => {
+      const response = await axios.get("http://localhost:5000/video/get-all");
+      const result = response.data;
+      console.log(result);
+    })();
+  }, []);
 
   useEffect(() => {
     console.log(videos);
