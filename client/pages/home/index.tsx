@@ -5,6 +5,7 @@ import { GetStaticProps, NextPage } from "next";
 import VideoServices from "../../services/video.services";
 import { IVideo } from "../../models/IVideo";
 import Card from "../../components/Card";
+import processHTML from "next/dist/next-server/lib/post-process";
 
 interface HomeProps {
   videos?: IVideo[];
@@ -28,8 +29,14 @@ const Index: NextPage<HomeProps> = ({ videos }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context): Promise<any> => {
   const videos: IVideo[] = await VideoServices.getAll();
+  console.log(videos);
+  if (!videos) {
+    console.log("HEREREREE");
+    return { props: {} };
+  }
+  console.log("HERERE");
   return {
     props: { videos },
   };

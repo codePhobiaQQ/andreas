@@ -19,7 +19,7 @@ export default class VideoServices {
       return videos;
     } catch (e) {
       console.log(e.message);
-      return e;
+      return [];
     }
   }
 
