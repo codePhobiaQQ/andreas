@@ -31,8 +31,10 @@ let VideoController = class VideoController {
         const afterAddVideo = await this.videoService.addVideo(video[0], bigImg[0], preview[0], videoData, userId);
         return response.json(afterAddVideo);
     }
-    getAllVideo() {
-        return this.videoService.getAll();
+    async getAllVideo() {
+        const videos = await this.videoService.getAll();
+        console.log(videos);
+        return videos;
     }
 };
 __decorate([
@@ -54,7 +56,7 @@ __decorate([
     common_1.Get('get-all'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], VideoController.prototype, "getAllVideo", null);
 VideoController = __decorate([
     common_2.Controller('video'),

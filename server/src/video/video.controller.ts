@@ -57,7 +57,9 @@ export class VideoController {
 
   @Get('get-all')
   // @Role(['user', 'admin', 'creator'])
-  getAllVideo() {
-    return this.videoService.getAll();
+  async getAllVideo() {
+    const videos = await this.videoService.getAll();
+    console.log(videos);
+    return videos;
   }
 }

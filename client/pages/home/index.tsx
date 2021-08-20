@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import LkDashbord from "../../hoc/LkDashbord";
 import LkHeaderContent from "../../hoc/LkHeaderContent";
-import { GetStaticProps, NextPage } from "next";
+import { GetServerSideProps, GetStaticProps, NextPage } from "next";
 import VideoServices from "../../services/video.services";
 import { IVideo } from "../../models/IVideo";
 import Card from "../../components/Card";
@@ -14,8 +14,9 @@ interface HomeProps {
 const Index: NextPage<HomeProps> = ({ videos }) => {
   const [activeFilter, setActiveFilter] = useState(1);
 
-  // useEffect(() => {
-  // }, []);
+  useEffect(() => {
+    console.log(videos);
+  }, []);
 
   return (
     <LkDashbord>
@@ -29,14 +30,13 @@ const Index: NextPage<HomeProps> = ({ videos }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context): Promise<any> => {
+export const getServerSideProps: GetServerSideProps = async (
+  context
+): Promise<any> => {
   const videos: IVideo[] = await VideoServices.getAll();
-  console.log(videos);
   if (!videos) {
-    console.log("HEREREREE");
     return { props: {} };
   }
-  console.log("HERERE");
   return {
     props: { videos },
   };
