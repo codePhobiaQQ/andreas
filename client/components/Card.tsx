@@ -3,11 +3,10 @@ import { IVideo } from "../models/IVideo";
 import { NextPage } from "next";
 
 interface CardProps {
-  key: number;
   card: IVideo;
 }
 
-const Card: NextPage<CardProps> = ({ key, card }) => {
+const Card: NextPage<CardProps> = ({ card }) => {
   return (
     <Link href={`/home/${card.id}`}>
       <a>

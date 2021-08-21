@@ -18,7 +18,9 @@ const video_module_1 = require("./video/video.module");
 require("reflect-metadata");
 const response_middleware_1 = require("./middleware/response.middleware");
 const file_module_1 = require("./file/file.module");
+const serve_static_1 = require("@nestjs/serve-static");
 const ormconfig_1 = require("./ormconfig");
+const path = require("path");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer.apply(response_middleware_1.ResponseMiddleware).forRoutes('/*');
@@ -29,6 +31,7 @@ AppModule = __decorate([
         controllers: [],
         providers: [],
         imports: [
+            serve_static_1.ServeStaticModule.forRoot({ rootPath: path.resolve(__dirname, 'static') }),
             config_1.ConfigModule.forRoot({
                 envFilePath: `.${process.env.NODE_ENV}.env`,
             }),

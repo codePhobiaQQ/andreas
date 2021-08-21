@@ -16,16 +16,17 @@ const Index: NextPage<HomeProps> = ({ videos }) => {
   const [activeFilter, setActiveFilter] = useState(1);
 
   useEffect(() => {
-    (async () => {
-      const response = await axios.get("http://localhost:5000/video/get-all");
-      const result = response.data;
-      console.log(result);
-    })();
+    console.log(videos);
   }, []);
 
   useEffect(() => {
-    console.log(videos);
-  }, []);
+    (async () => {
+      const response = await axios.get("http://localhost:5000/video/get-all");
+      console.log(response);
+      const test = response.data;
+      console.log(test);
+    })();
+  });
 
   return (
     <LkDashbord>
@@ -39,9 +40,7 @@ const Index: NextPage<HomeProps> = ({ videos }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (
-  context
-): Promise<any> => {
+export const getStaticProps: GetStaticProps = async (context): Promise<any> => {
   const videos: IVideo[] = await VideoServices.getAll();
   if (!videos) {
     return { props: {} };
