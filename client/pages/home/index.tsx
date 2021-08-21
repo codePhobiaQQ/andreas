@@ -16,7 +16,7 @@ const Index: NextPage<HomeProps> = ({ videos }) => {
   const [activeFilter, setActiveFilter] = useState(1);
 
   useEffect(() => {
-    console.log(videos);
+    console.log(videos, 1);
   }, []);
 
   useEffect(() => {
