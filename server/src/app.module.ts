@@ -10,6 +10,7 @@ import 'reflect-metadata';
 import { ResponseMiddleware } from './middleware/response.middleware';
 import { FileModule } from './file/file.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { BlogModule } from './blog/blog.module';
 import OrmConfig from './ormconfig';
 import * as path from 'path';
 
@@ -28,6 +29,7 @@ import * as path from 'path';
     TokenModule,
     VideoModule,
     FileModule,
+    BlogModule,
   ],
 })
 export class AppModule implements NestModule {

@@ -11,6 +11,7 @@ import {
 } from 'typeorm';
 import { Role } from '../role/role.entity';
 import { Video } from '../video/video.entity';
+import { Blog } from '../blog/blog.entity';
 
 @Entity()
 export class User extends BaseEntity {
@@ -51,4 +52,7 @@ export class User extends BaseEntity {
     onUpdate: 'CASCADE',
   })
   videos: Video[];
+
+  @OneToMany(() => Blog, (blog) => blog.author)
+  blogs: Blog[];
 }

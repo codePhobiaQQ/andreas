@@ -2,6 +2,7 @@ import {
   Body,
   Get,
   Post,
+  Query,
   Req,
   Res,
   UploadedFiles,
@@ -11,11 +12,16 @@ import {
 import { Response, Request } from 'express';
 import { Controller } from '@nestjs/common';
 import { FileFieldsInterceptor } from '@nestjs/platform-express/multer';
-import { VideoUpploadDto } from './dto/videoUppload.dto';
+import {
+  GetAmountVideoDto,
+  GetOneVideoDto,
+  VideoUpploadDto,
+} from './dto/videoUppload.dto';
 import { VideoService } from './video.service';
 import { TokenService } from '../token/token.service';
 import { RoleGuard } from '../role/role.guard';
 import { Role } from '../role/role.decorator';
+import { Video } from './video.entity';
 
 @Controller('video')
 // @UseGuards(RoleGuard)
@@ -62,4 +68,19 @@ export class VideoController {
     console.log(videos);
     return videos;
   }
+
+  @Get('find-by-id')
+  async findById(@Query() findData: GetOneVideoDto): Promise<Video> {
+    const video = await this.videoService.findById(findData.id);
+    return video;
+  }
+
+  // @Get('get-amount')
+  // async getAmount(@Query() findData: GetAmountVideoDto): Promise<Video[]> {
+  //   const video = await this.videoService.getAmount(
+  //     findData.count,
+  //     findData.page,
+  //   );
+  //   return video;
+  // }
 }

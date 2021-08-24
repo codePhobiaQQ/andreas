@@ -5,7 +5,6 @@ import { GetServerSideProps, GetStaticProps, NextPage } from "next";
 import VideoServices from "../../services/video.services";
 import { IVideo } from "../../models/IVideo";
 import Card from "../../components/Card";
-import processHTML from "next/dist/next-server/lib/post-process";
 import axios from "axios";
 
 interface HomeProps {
@@ -32,7 +31,6 @@ const Index: NextPage<HomeProps> = ({ videos }) => {
     <LkDashbord>
       <LkHeaderContent />
       <div className="contentData">
-        1
         {videos?.map((card, key) => (
           <Card key={key} card={card} />
         ))}
@@ -41,8 +39,17 @@ const Index: NextPage<HomeProps> = ({ videos }) => {
   );
 };
 
+export default Index;
+
+// export async function getServerSideProps<GetServerSideProps>(context: any) {
+//   const products = await fetch("https://fakestoreapi.com/products/1")
+//     .then((res) => res.json())
+//     .then((json) => console.log(json));
+// }
+
 export const getStaticProps: GetStaticProps = async (context): Promise<any> => {
   const videos: IVideo[] = await VideoServices.getAll();
+  console.log(videos);
   if (!videos) {
     return { props: {} };
   }
@@ -50,5 +57,3 @@ export const getStaticProps: GetStaticProps = async (context): Promise<any> => {
     props: { videos },
   };
 };
-
-export default Index;

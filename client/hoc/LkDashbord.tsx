@@ -144,7 +144,7 @@ const LkDashbord = (props: IDashbord) => {
                       fill="#5779F0"
                     />
                   </svg>
-                  <span>Add Video</span>
+                  <span>Edit Videos</span>
                 </a>
               </Link>
             </li>

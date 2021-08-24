@@ -5,3 +5,12 @@ export class VideoUpploadDto {
   readonly Price: number;
   readonly Duration: string;
 }
+
+export class GetOneVideoDto {
+  readonly id: number;
+}
+
+export class GetAmountVideoDto {
+  readonly count: number;
+  readonly page: number;
+}

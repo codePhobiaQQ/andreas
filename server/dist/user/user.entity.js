@@ -13,6 +13,7 @@ exports.User = void 0;
 const token_entity_1 = require("../token/token.entity");
 const typeorm_1 = require("typeorm");
 const role_entity_1 = require("../role/role.entity");
+const blog_entity_1 = require("../blog/blog.entity");
 let User = class User extends typeorm_1.BaseEntity {
 };
 __decorate([
@@ -64,6 +65,10 @@ __decorate([
     }),
     __metadata("design:type", Array)
 ], User.prototype, "videos", void 0);
+__decorate([
+    typeorm_1.OneToMany(() => blog_entity_1.Blog, (blog) => blog.author),
+    __metadata("design:type", Array)
+], User.prototype, "blogs", void 0);
 User = __decorate([
     typeorm_1.Entity()
 ], User);

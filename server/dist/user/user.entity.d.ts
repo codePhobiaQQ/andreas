@@ -2,6 +2,7 @@ import { Token } from 'src/token/token.entity';
 import { BaseEntity } from 'typeorm';
 import { Role } from '../role/role.entity';
 import { Video } from '../video/video.entity';
+import { Blog } from '../blog/blog.entity';
 export declare class User extends BaseEntity {
     id: number;
     email: string;
@@ -14,4 +15,5 @@ export declare class User extends BaseEntity {
     roles: Role[];
     token: Token;
     videos: Video[];
+    blogs: Blog[];
 }

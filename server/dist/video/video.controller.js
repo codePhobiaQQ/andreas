@@ -36,6 +36,10 @@ let VideoController = class VideoController {
         console.log(videos);
         return videos;
     }
+    async findById(findData) {
+        const video = await this.videoService.findById(findData.id);
+        return video;
+    }
 };
 __decorate([
     common_1.Post('add'),
@@ -58,6 +62,13 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], VideoController.prototype, "getAllVideo", null);
+__decorate([
+    common_1.Get('find-by-id'),
+    __param(0, common_1.Query()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [videoUppload_dto_1.GetOneVideoDto]),
+    __metadata("design:returntype", Promise)
+], VideoController.prototype, "findById", null);
 VideoController = __decorate([
     common_2.Controller('video'),
     __metadata("design:paramtypes", [video_service_1.VideoService,

@@ -8,4 +8,5 @@ export declare class VideoService {
     constructor(videoRepository: Repository<Video>, fileService: FileService);
     addVideo(video: any, bigImg: any, preview: any, dto: VideoUpploadDto, userId: any): Promise<Video>;
     getAll(): Promise<Video[]>;
+    findById(id: number): Promise<Video>;
 }

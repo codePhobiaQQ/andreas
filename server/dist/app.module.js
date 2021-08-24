@@ -19,6 +19,7 @@ require("reflect-metadata");
 const response_middleware_1 = require("./middleware/response.middleware");
 const file_module_1 = require("./file/file.module");
 const serve_static_1 = require("@nestjs/serve-static");
+const blog_module_1 = require("./blog/blog.module");
 const ormconfig_1 = require("./ormconfig");
 const path = require("path");
 let AppModule = class AppModule {
@@ -42,6 +43,7 @@ AppModule = __decorate([
             token_module_1.TokenModule,
             video_module_1.VideoModule,
             file_module_1.FileModule,
+            blog_module_1.BlogModule,
         ],
     })
 ], AppModule);

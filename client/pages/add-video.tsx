@@ -6,8 +6,15 @@ import { useInput } from "../hooks/useInput";
 import $api from "../http";
 import { useRouter } from "next/router";
 import VideoServices from "../services/video.services";
+import { GetStaticProps } from "next";
+import { IVideo } from "../models/IVideo";
+import Card from "../components/Card";
 
-const AddVideo = () => {
+interface AddVideoProps {
+  videos: IVideo[];
+}
+
+const AddVideo = ({ videos }: AddVideoProps) => {
   const Title = useInput("");
   const Price = useInput(0);
   const Description = useInput("");
@@ -85,8 +92,24 @@ const AddVideo = () => {
           OK!
         </button>
       </div>
+      <div className="allVideos contentData">
+        {videos.map((video, index) => {
+          return <Card key={index} card={video} />;
+        })}
+      </div>
     </LkDashbord>
   );
+};
+
+export const getStaticProps: GetStaticProps = async (context): Promise<any> => {
+  const videos: IVideo[] = await VideoServices.getAll();
+  console.log(videos);
+  if (!videos) {
+    return { props: {} };
+  }
+  return {
+    props: { videos },
+  };
 };
 
 export default AddVideo;

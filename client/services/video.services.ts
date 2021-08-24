@@ -14,12 +14,31 @@ export default class VideoServices {
 
   static async getAll(): Promise<IVideo[]> {
     try {
-      const response = await axios.get("http://localhost:5000/video/get-all");
+      const response = await fetch("http://localhost:5000/video/get-all").then(
+        (res) => res.json()
+      );
+      console.log(response);
+      // const videos = response.data;
+      return response;
+    } catch (e) {
+      console.log(e.message);
+      return [];
+    }
+  }
+
+  static async getOne(id: number | undefined): Promise<IVideo> {
+    try {
+      if (id === undefined) {
+        return {} as IVideo;
+      }
+      const response = await axios.get(
+        `http://localhost:5000/video/find-by-id?id=${id}`
+      );
       const videos = response.data;
       return videos;
     } catch (e) {
       console.log(e.message);
-      return [];
+      return {} as IVideo;
     }
   }
 

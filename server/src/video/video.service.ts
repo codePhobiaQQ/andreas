@@ -45,4 +45,24 @@ export class VideoService {
       throw new HttpException(e.message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
+
+  // async getAmount(count: number, page: number): Promise<Video[]> {
+  //   try {
+  //     const video = await this.videoRepository.find({ where: { id },  });
+  //     console.log(video);
+  //     return video;
+  //   } catch (e) {
+  //     throw new HttpException(e.message, HttpStatus.INTERNAL_SERVER_ERROR);
+  //   }
+  // }
+
+  async findById(id: number): Promise<Video> {
+    try {
+      const video = await this.videoRepository.findOne({ where: { id } });
+      console.log(video);
+      return video;
+    } catch (e) {
+      throw new HttpException(e.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
 }

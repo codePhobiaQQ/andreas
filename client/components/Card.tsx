@@ -8,7 +8,7 @@ interface CardProps {
 
 const Card: NextPage<CardProps> = ({ card }) => {
   return (
-    <Link href={`/home/${card.id}`}>
+    <Link href={`/home/cards/${card.id}`}>
       <a>
         <div className="card videoCard">
           <img
