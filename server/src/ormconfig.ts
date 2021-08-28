@@ -2,10 +2,10 @@ import { ConnectionOptions } from 'typeorm';
 
 const config: ConnectionOptions = {
   type: 'postgres',
-  host: '91.215.171.54',
+  host: 'localhost',
   port: 5432,
-  username: 'postgres',
-  password: '',
+  username: 'root',
+  password: 'root',
   database: 'final-start-template',
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
   migrations: [__dirname + '/migrations/**/*{.ts,.js}'],

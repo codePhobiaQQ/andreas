@@ -39,7 +39,9 @@ export class VideoService {
 
   async getAll(): Promise<Video[]> {
     try {
-      const videos = await this.videoRepository.find();
+      const videos = await this.videoRepository.find({
+        relations: ['CategoryVideo'],
+      });
       return videos;
     } catch (e) {
       throw new HttpException(e.message, HttpStatus.INTERNAL_SERVER_ERROR);

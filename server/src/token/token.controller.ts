@@ -11,9 +11,14 @@ export class TokenController {
     @Req() request: Request,
     @Res({ passthrough: true }) response: Response,
   ): Promise<any> {
-    const token = request.headers.authorization.split(' ')[1];
-    const user = await this.tokenService.validateAccessToken(token);
-    return response.json(user);
+    try {
+      const token = request.headers.authorization.split(' ')[1];
+      const user = await this.tokenService.validateAccessToken(token);
+      console.log('response', response);
+      return response.status(200).json(user);
+    } catch (err) {
+      return response.status(401).json({ err });
+    }
   }
 
   @Get('refresh')
@@ -22,7 +27,6 @@ export class TokenController {
     @Res({ passthrough: true }) response: Response,
   ): Promise<any> {
     const { token } = request.cookies;
-    console.log('token from cookies', token);
     const { accessToken, refreshToken } = await this.tokenService.refresh(
       token,
     );

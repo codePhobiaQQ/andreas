@@ -4,9 +4,11 @@ import {
   Column,
   Entity,
   JoinColumn,
+  ManyToMany,
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { CategoryVideoEntity } from '../category-video/category-video.entity';
 
 @Entity()
 export class Video extends BaseEntity {
@@ -28,9 +30,6 @@ export class Video extends BaseEntity {
   @Column({ nullable: false })
   price: number;
 
-  @Column({ nullable: false })
-  category: string;
-
   @Column({ nullable: true })
   description: string;
 
@@ -38,6 +37,8 @@ export class Video extends BaseEntity {
   level: string;
 
   @ManyToOne(() => User, (user) => user.videos)
-  @JoinColumn({ name: 'user_id' })
   user: User;
+
+  @ManyToMany(() => CategoryVideoEntity, (CategoryVideo) => CategoryVideo.video)
+  CategoryVideo: CategoryVideoEntity[];
 }

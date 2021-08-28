@@ -41,6 +41,8 @@ export class RoleService {
     try {
       const role = await this.getByValue('admin');
       const user = await this.userService.getUserById(userId);
+      console.log('user', user);
+      console.log('role', role);
       let userHasRole = 0;
       user.roles.map((userRole) => {
         if (JSON.stringify(userRole) === JSON.stringify(role)) {

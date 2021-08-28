@@ -11,6 +11,7 @@ import { ResponseMiddleware } from './middleware/response.middleware';
 import { FileModule } from './file/file.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { BlogModule } from './blog/blog.module';
+import { CategoryVideoModule } from './category-video/category-video.module';
 import OrmConfig from './ormconfig';
 import * as path from 'path';
 
@@ -30,6 +31,7 @@ import * as path from 'path';
     VideoModule,
     FileModule,
     BlogModule,
+    CategoryVideoModule,
   ],
 })
 export class AppModule implements NestModule {

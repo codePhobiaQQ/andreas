@@ -9,6 +9,7 @@ export default class UserServices {
   }
 
   static async logged(): Promise<any> {
+    console.log("token/logged");
     return $api.post("/token/logged");
   }
 

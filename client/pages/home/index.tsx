@@ -6,30 +6,25 @@ import VideoServices from "../../services/video.services";
 import { IVideo } from "../../models/IVideo";
 import Card from "../../components/Card";
 import axios from "axios";
+import CategoryServices from "../../services/category.services";
+import ICategory from "../../models/ICategory";
 
 interface HomeProps {
-  videos?: IVideo[];
+  videos: IVideo[];
+  categories: ICategory[];
 }
 
-const Index: NextPage<HomeProps> = ({ videos }) => {
+const Index: NextPage<HomeProps> = ({ videos, categories }) => {
   const [activeFilter, setActiveFilter] = useState(1);
 
   useEffect(() => {
-    console.log(videos, 1);
+    console.log(videos);
+    console.log(categories);
   }, []);
-
-  useEffect(() => {
-    (async () => {
-      const response = await axios.get("http://localhost:5000/video/get-all");
-      console.log(response);
-      const test = response.data;
-      console.log(test);
-    })();
-  });
 
   return (
     <LkDashbord>
-      <LkHeaderContent />
+      <LkHeaderContent categories={categories} />
       <div className="contentData">
         {videos?.map((card, key) => (
           <Card key={key} card={card} />
@@ -41,19 +36,11 @@ const Index: NextPage<HomeProps> = ({ videos }) => {
 
 export default Index;
 
-// export async function getServerSideProps<GetServerSideProps>(context: any) {
-//   const products = await fetch("https://fakestoreapi.com/products/1")
-//     .then((res) => res.json())
-//     .then((json) => console.log(json));
-// }
-
-export const getStaticProps: GetStaticProps = async (context): Promise<any> => {
-  const videos: IVideo[] = await VideoServices.getAll();
-  console.log(videos);
-  if (!videos) {
-    return { props: {} };
-  }
-  return {
-    props: { videos },
+export const getServerSideProps: GetServerSideProps =
+  async (): Promise<any> => {
+    const videos: IVideo[] = await VideoServices.getAll();
+    const categories: ICategory[] = await CategoryServices.getAll();
+    return {
+      props: { videos, categories },
+    };
   };
-};

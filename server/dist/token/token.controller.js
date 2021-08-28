@@ -20,13 +20,18 @@ let TokenController = class TokenController {
         this.tokenService = tokenService;
     }
     async logged(request, response) {
-        const token = request.headers.authorization.split(' ')[1];
-        const user = await this.tokenService.validateAccessToken(token);
-        return response.json(user);
+        try {
+            const token = request.headers.authorization.split(' ')[1];
+            const user = await this.tokenService.validateAccessToken(token);
+            console.log('response', response);
+            return response.status(200).json(user);
+        }
+        catch (err) {
+            return response.status(401).json({ err });
+        }
     }
     async refresh(request, response) {
         const { token } = request.cookies;
-        console.log('token from cookies', token);
         const { accessToken, refreshToken } = await this.tokenService.refresh(token);
         response.cookie('token', refreshToken, {
             maxAge: 30 * 24 * 60 * 60 * 1000,

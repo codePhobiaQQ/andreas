@@ -20,7 +20,8 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      dispatch(isLogged());
+      // dispatch(isLogged());
+      dispatch(setLoading(false));
     } else {
       route.push("/");
       dispatch(setLoading(false));

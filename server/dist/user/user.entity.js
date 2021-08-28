@@ -55,7 +55,6 @@ __decorate([
 ], User.prototype, "roles", void 0);
 __decorate([
     typeorm_1.OneToOne(() => token_entity_1.Token),
-    typeorm_1.JoinTable(),
     __metadata("design:type", token_entity_1.Token)
 ], User.prototype, "token", void 0);
 __decorate([

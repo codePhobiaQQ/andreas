@@ -1,10 +1,10 @@
 module.exports = {
-  // reactStrictMode: false,
+  reactStrictMode: true,
   // async rewrites() {
   //   return [
   //     {
   //       source: '/:path*',
-  //       destination: 'https://localhost:5000/:path*',
+  //       destination: 'localhost',
   //     },
   //   ]
   // },

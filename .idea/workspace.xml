@@ -20,34 +20,37 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:testing" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:client" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9634fc3f-2239-444f-a873-094217e759fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/components/videoplayer/Video.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/hoc/LkVideoContent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/pages/home/cards/[id].tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/components/AddVideo/EditVideo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/components/EditCart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/models/ICategory.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/services/category.services.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/.dockerignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/Dockerfile" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/docker-compose.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/src/blog/blog.entity.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/src/blog/dto/createBlog.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/category-video/category-video.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/category-video/category-video.entity.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/server/src/ormconfig.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/components/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/Card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/components/UI/InputCustom.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/components/UI/InputCustom.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/hoc/LkDashbord.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/hoc/LkDashbord.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/hoc/LkHeaderContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/hoc/LkHeaderContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/hooks/useInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/hooks/useInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/pages/add-video.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/add-video.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/home/[:id].tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/pages/home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/home/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/services/user.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/services/user.services.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/services/video.services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/services/video.services.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/styles/main.sass" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/main.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/styles/mixins/_mixins.sass" beforeDir="false" afterPath="$PROJECT_DIR$/client/styles/mixins/_mixins.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/ormconfig.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
@@ -57,11 +60,14 @@
       <change beforePath="$PROJECT_DIR$/server/src/role/role.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/role/role.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/role/role.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/role/role.entity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/role/role.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/role/role.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/token/token.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/token/token.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/user-role.entity.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.entity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/video/dto/videoUppload.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/video/dto/videoUppload.dto.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/video/video.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/video/video.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/video/video.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/video/video.entity.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/video/video.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/video/video.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,17 +78,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="testing" />
+        <entry key="$PROJECT_DIR$" value="client" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
-  </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1vJkFV4AaB9Rj8CEfRa4u5Q78EZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -96,7 +96,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -104,34 +104,30 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/server/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/server" />
-      <recent name="$PROJECT_DIR$/client/pages/home" />
       <recent name="$PROJECT_DIR$/server/src" />
       <recent name="$PROJECT_DIR$/server/src/role" />
+      <recent name="$PROJECT_DIR$/client/pages/home" />
       <recent name="$PROJECT_DIR$/client/styles" />
+      <recent name="$PROJECT_DIR$/client/public/assets/svg" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client" />
       <recent name="$PROJECT_DIR$/server" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev (1)">
-    <configuration name="server.postgres: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="postgres" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="server/docker-compose.yml" />
-        </settings>
-      </deployment>
+  <component name="RunManager" selected="npm.start:dev">
+    <configuration name="build (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -154,8 +150,8 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/client/package.json" />
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/server/package.json" />
       <command value="run" />
       <scripts>
         <script value="start" />
@@ -176,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev (1)" />
-        <item itemvalue="Docker.server.postgres: Compose Deployment" />
-        <item itemvalue="npm.start (1)" />
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.start:dev" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.build (1)" />
+        <item itemvalue="npm.dev (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -208,18 +204,12 @@
       <workItem from="1628445413039" duration="212000" />
       <workItem from="1628445846487" duration="13196000" />
       <workItem from="1629032309478" duration="15092000" />
-      <workItem from="1629829507024" duration="26000" />
-      <workItem from="1629829534882" duration="974000" />
+      <workItem from="1630054023009" duration="15831000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/client/components/videoplayer/Video.d.ts" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -232,7 +222,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="testing" />
+                        <option value="client" />
                       </list>
                     </value>
                   </entry>
@@ -246,10 +236,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="623" y="365" key="#ESLint" timestamp="1629737127489">
+    <state x="623" y="366" key="#ESLint" timestamp="1629876561133">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="623" y="365" key="#ESLint/0.0.1440.900@0.0.1440.900" timestamp="1629737127489" />
+    <state x="623" y="366" key="#ESLint/0.0.1440.900@0.0.1440.900" timestamp="1629876561133" />
     <state x="830" y="439" key="#ESLint/0.0.1920.1080@0.0.1920.1080" timestamp="1627979815130" />
     <state x="438" y="335" key="#Prettier" timestamp="1629034101839">
       <screen x="0" y="0" width="1440" height="900" />
@@ -264,116 +254,111 @@
     </state>
     <state x="458" y="201" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1628583090931" />
     <state x="611" y="241" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1628063118912" />
-    <state x="416" y="177" key="#server.postgres:_Compose_Deployment" timestamp="1629813965138">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="416" y="177" key="#server.postgres:_Compose_Deployment/0.0.1440.900@0.0.1440.900" timestamp="1629813965138" />
     <state x="375" y="232" key="EditFileWatcherDialog" timestamp="1626356848369">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="375" y="232" key="EditFileWatcherDialog/0.0.1440.900@0.0.1440.900" timestamp="1626356848369" />
-    <state width="1419" height="229" key="GridCell.Tab.0.bottom" timestamp="1629831315620">
+    <state width="1419" height="309" key="GridCell.Tab.0.bottom" timestamp="1629884076597">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="229" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1629831315620" />
+    <state width="1419" height="309" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1629884076597" />
     <state width="1899" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1628090321037" />
     <state width="1419" height="244" key="GridCell.Tab.0.bottom/0.25.1440.783@0.25.1440.783" timestamp="1629374000271" />
     <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.25.1440.794@0.25.1440.794" timestamp="1629104897316" />
-    <state width="1419" height="229" key="GridCell.Tab.0.center" timestamp="1629831315618">
+    <state width="1419" height="309" key="GridCell.Tab.0.center" timestamp="1629884076596">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="229" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1629831315618" />
+    <state width="1419" height="309" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1629884076596" />
     <state width="1899" height="305" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1628090321036" />
     <state width="1419" height="244" key="GridCell.Tab.0.center/0.25.1440.783@0.25.1440.783" timestamp="1629374000270" />
     <state width="1419" height="245" key="GridCell.Tab.0.center/0.25.1440.794@0.25.1440.794" timestamp="1629104897316" />
-    <state width="1419" height="229" key="GridCell.Tab.0.left" timestamp="1629831315617">
+    <state width="1419" height="309" key="GridCell.Tab.0.left" timestamp="1629884076593">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="229" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1629831315617" />
+    <state width="1419" height="309" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1629884076593" />
     <state width="1899" height="305" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1628090321035" />
     <state width="1419" height="244" key="GridCell.Tab.0.left/0.25.1440.783@0.25.1440.783" timestamp="1629374000269" />
     <state width="1419" height="245" key="GridCell.Tab.0.left/0.25.1440.794@0.25.1440.794" timestamp="1629104897315" />
-    <state width="1419" height="229" key="GridCell.Tab.0.right" timestamp="1629831315619">
+    <state width="1419" height="309" key="GridCell.Tab.0.right" timestamp="1629884076597">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="229" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1629831315619" />
+    <state width="1419" height="309" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1629884076597" />
     <state width="1899" height="305" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1628090321036" />
     <state width="1419" height="244" key="GridCell.Tab.0.right/0.25.1440.783@0.25.1440.783" timestamp="1629374000270" />
     <state width="1419" height="245" key="GridCell.Tab.0.right/0.25.1440.794@0.25.1440.794" timestamp="1629104897316" />
-    <state width="1419" height="304" key="GridCell.Tab.1.bottom" timestamp="1629820597825">
+    <state width="1419" height="304" key="GridCell.Tab.1.bottom" timestamp="1628509438127">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1629820597825" />
-    <state width="1419" height="304" key="GridCell.Tab.1.center" timestamp="1629820597824">
+    <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1628509438127" />
+    <state width="1419" height="304" key="GridCell.Tab.1.center" timestamp="1628509438126">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1629820597824" />
-    <state width="1419" height="304" key="GridCell.Tab.1.left" timestamp="1629820597823">
+    <state width="1419" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1628509438126" />
+    <state width="1419" height="304" key="GridCell.Tab.1.left" timestamp="1628509438126">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1629820597823" />
-    <state width="1419" height="304" key="GridCell.Tab.1.right" timestamp="1629820597824">
+    <state width="1419" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1628509438126" />
+    <state width="1419" height="304" key="GridCell.Tab.1.right" timestamp="1628509438127">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1629820597824" />
-    <state width="1419" height="304" key="GridCell.Tab.2.bottom" timestamp="1629820597827">
+    <state width="1419" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1628509438127" />
+    <state width="1419" height="304" key="GridCell.Tab.2.bottom" timestamp="1628509438128">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.2.bottom/0.0.1440.900@0.0.1440.900" timestamp="1629820597827" />
-    <state width="1419" height="304" key="GridCell.Tab.2.center" timestamp="1629820597826">
+    <state width="1419" height="304" key="GridCell.Tab.2.bottom/0.0.1440.900@0.0.1440.900" timestamp="1628509438128" />
+    <state width="1419" height="304" key="GridCell.Tab.2.center" timestamp="1628509438128">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.2.center/0.0.1440.900@0.0.1440.900" timestamp="1629820597826" />
-    <state width="1419" height="304" key="GridCell.Tab.2.left" timestamp="1629820597825">
+    <state width="1419" height="304" key="GridCell.Tab.2.center/0.0.1440.900@0.0.1440.900" timestamp="1628509438128" />
+    <state width="1419" height="304" key="GridCell.Tab.2.left" timestamp="1628509438127">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.2.left/0.0.1440.900@0.0.1440.900" timestamp="1629820597825" />
-    <state width="1419" height="304" key="GridCell.Tab.2.right" timestamp="1629820597826">
+    <state width="1419" height="304" key="GridCell.Tab.2.left/0.0.1440.900@0.0.1440.900" timestamp="1628509438127" />
+    <state width="1419" height="304" key="GridCell.Tab.2.right" timestamp="1628509438128">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1629820597826" />
-    <state width="1419" height="304" key="GridCell.Tab.3.bottom" timestamp="1629820597829">
+    <state width="1419" height="304" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1628509438128" />
+    <state width="1419" height="304" key="GridCell.Tab.3.bottom" timestamp="1628509438130">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.3.bottom/0.0.1440.900@0.0.1440.900" timestamp="1629820597829" />
-    <state width="1419" height="304" key="GridCell.Tab.3.center" timestamp="1629820597828">
+    <state width="1419" height="304" key="GridCell.Tab.3.bottom/0.0.1440.900@0.0.1440.900" timestamp="1628509438130" />
+    <state width="1419" height="304" key="GridCell.Tab.3.center" timestamp="1628509438129">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.3.center/0.0.1440.900@0.0.1440.900" timestamp="1629820597828" />
-    <state width="1419" height="304" key="GridCell.Tab.3.left" timestamp="1629820597828">
+    <state width="1419" height="304" key="GridCell.Tab.3.center/0.0.1440.900@0.0.1440.900" timestamp="1628509438129" />
+    <state width="1419" height="304" key="GridCell.Tab.3.left" timestamp="1628509438129">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.3.left/0.0.1440.900@0.0.1440.900" timestamp="1629820597828" />
-    <state width="1419" height="304" key="GridCell.Tab.3.right" timestamp="1629820597829">
+    <state width="1419" height="304" key="GridCell.Tab.3.left/0.0.1440.900@0.0.1440.900" timestamp="1628509438129" />
+    <state width="1419" height="304" key="GridCell.Tab.3.right" timestamp="1628509438129">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.3.right/0.0.1440.900@0.0.1440.900" timestamp="1629820597829" />
-    <state x="171" y="98" key="SettingsEditor" timestamp="1629810778322">
+    <state width="1419" height="304" key="GridCell.Tab.3.right/0.0.1440.900@0.0.1440.900" timestamp="1628509438129" />
+    <state x="144" y="76" key="MergeDialog" timestamp="1629831825756">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="171" y="98" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1629810778322" />
-    <state x="469" y="179" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1627979926304" />
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1629460759737">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1629460759737" />
-    <state x="511" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1629660990208">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="511" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1629660990208" />
-    <state x="560" y="248" width="799" height="584" key="find.popup" timestamp="1628091746345">
+    <state x="144" y="76" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1629831825756" />
+    <state x="469" y="179" key="SettingsEditor" timestamp="1627979926304">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="420" y="207" width="599" height="486" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1626682884321" />
+    <state x="469" y="179" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1627979926304" />
+    <state x="420" y="207" width="599" height="486" key="find.popup" timestamp="1630067665530">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="420" y="207" width="599" height="486" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1630067665530" />
     <state x="560" y="248" width="799" height="584" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1628091746345" />
-    <state x="385" y="210" key="run.anything.popup" timestamp="1629662826994">
+    <state x="482" y="167" key="git4idea.branch.GitSmartOperationDialog" timestamp="1629831817584">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1629662826994" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1629735790683">
+    <state x="482" y="167" key="git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900" timestamp="1629831817584" />
+    <state x="385" y="210" key="run.anything.popup" timestamp="1630066568567">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1629735790683" />
+    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1630066568567" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1628406822799">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1628406822799" />
     <state x="513" y="235" width="894" height="812" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1627979493037" />
   </component>
 </project>

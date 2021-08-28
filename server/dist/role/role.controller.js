@@ -24,8 +24,10 @@ let RoleController = class RoleController {
         const role = this.roleService.create(roleDto);
         return role;
     }
-    add(data) {
-        const user = this.roleService.add(data.userId);
+    async add(data) {
+        console.log('user');
+        const user = await this.roleService.add(data.userId);
+        console.log(user);
         return user;
     }
 };

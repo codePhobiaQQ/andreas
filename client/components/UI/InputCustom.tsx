@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface InputProps {
   label?: string;
   id: string;
   value: any;
   onChange: any;
+  defaultVal?: string;
 }
 
-const InputCustom = ({ label, id, value, onChange }: InputProps) => {
+const InputCustom = ({
+  label,
+  id,
+  value,
+  onChange,
+  defaultVal,
+}: InputProps) => {
+  useEffect(() => {
+    defaultVal ? onChange(defaultVal) : null;
+  }, []);
+
   return (
     <div>
       <label htmlFor={id}>{label}: </label>

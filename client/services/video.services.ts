@@ -14,12 +14,9 @@ export default class VideoServices {
 
   static async getAll(): Promise<IVideo[]> {
     try {
-      const response = await fetch("http://localhost:5000/video/get-all").then(
-        (res) => res.json()
-      );
-      console.log(response);
-      // const videos = response.data;
-      return response;
+      const response = await axios.get("http://localhost:5000/video/get-all");
+      const videos = response.data;
+      return videos;
     } catch (e) {
       console.log(e.message);
       return [];

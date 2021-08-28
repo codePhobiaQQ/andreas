@@ -44,7 +44,6 @@ export class User extends BaseEntity {
   roles: Role[];
 
   @OneToOne(() => Token)
-  @JoinTable()
   token: Token;
 
   @OneToMany('Video', (video: Video) => video.user, {

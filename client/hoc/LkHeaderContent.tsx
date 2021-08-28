@@ -1,36 +1,26 @@
 import React, { useState } from "react";
 import PersonData from "../components/PersonData";
+import ICategory from "../models/ICategory";
 
-const LkHeaderContent = () => {
-  const [activeFilter, setActiveFilter] = useState(1);
+interface ILkHeaderContent {
+  categories: ICategory[];
+}
+
+const LkHeaderContent = ({ categories }: ILkHeaderContent) => {
+  const [activeFilter, setActiveFilter] = useState(0);
 
   return (
     <div className="personalData">
       <ul className="filters">
-        <li
-          onClick={() => setActiveFilter(1)}
-          className={activeFilter == 1 ? "active" : ""}
-        >
-          All videos
-        </li>
-        <li
-          onClick={() => setActiveFilter(2)}
-          className={activeFilter == 2 ? "active" : ""}
-        >
-          Suggested
-        </li>
-        <li
-          onClick={() => setActiveFilter(3)}
-          className={activeFilter == 3 ? "active" : ""}
-        >
-          Highlighed of the week
-        </li>
-        <li
-          onClick={() => setActiveFilter(4)}
-          className={activeFilter == 4 ? "active" : ""}
-        >
-          Special packages
-        </li>
+        {categories?.map((category, index) => (
+          <li
+            className={activeFilter == index ? "active" : ""}
+            onClick={() => setActiveFilter(index)}
+            key={index}
+          >
+            {category.name}
+          </li>
+        ))}
       </ul>
       <PersonData />
     </div>

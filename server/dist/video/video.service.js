@@ -38,7 +38,9 @@ let VideoService = class VideoService {
     }
     async getAll() {
         try {
-            const videos = await this.videoRepository.find();
+            const videos = await this.videoRepository.find({
+                relations: ['CategoryVideo'],
+            });
             return videos;
         }
         catch (e) {
